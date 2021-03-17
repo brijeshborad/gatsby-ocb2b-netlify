@@ -61,8 +61,8 @@
       .plus,
       .minus {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: calc(50% - 28px);
+        right: 15px;
         bottom: 0;
         left: 0;
 

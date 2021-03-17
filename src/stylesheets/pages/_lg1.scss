@@ -56,7 +56,7 @@ $font-5: "SF Pro Display Bold";
   }
 
   .px-15{
-   padding-left: 15px;
+    padding-left: 15px;
     padding-right: 15px;
   }
 
@@ -227,6 +227,10 @@ $font-5: "SF Pro Display Bold";
     margin-left: auto;
   }
 
+  .pr-3{
+    padding-right: 3em;
+  }
+
   .section-py-lg {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -264,7 +268,7 @@ $font-5: "SF Pro Display Bold";
       padding: 10px;
       font-weight: 700;
       content: "\f053";
-      font-family: Font Awesome\ 5 Free;
+      font-family: Font Awesome\ 5 Free, sans-serif;
     }
 
   }
@@ -326,7 +330,7 @@ $font-5: "SF Pro Display Bold";
 
   .banner {
     background-color: #f3f3f3;
-    height: 100vh;
+    //height: 100vh;
 
     .banner-content{
       width: 67%;
@@ -364,8 +368,8 @@ $font-5: "SF Pro Display Bold";
       align-items: flex-end;
       justify-content: center;
       width: 100%;
-      position: absolute;
-      bottom: 0;
+      //position: absolute;
+      //bottom: 0;
 
       .banner-img{
         padding: 0 20px;
@@ -973,12 +977,12 @@ $font-5: "SF Pro Display Bold";
               font-family: $font-4;
               padding-left: 40px;
               font-size: 30px;
-              width: 98%;
+              width: 95%;
             }
 
             span{
               left: unset;
-              right: 0;
+              right: 15px;
               line-height: unset;
               height: 115px;
               display: flex;
@@ -1013,13 +1017,13 @@ $font-5: "SF Pro Display Bold";
     .according-btn {
       background-color: transparent;
       border: 1px solid black;
-      border-radius: 0%;
+      border-radius: 0;
       padding: 40px 100px;
-      width: 541px;
+      width: 540px;
       margin-top: 95px;
       display: flex;
       font-family: $font-1;
-      font-size: 40px;
+      font-size: 36px;
       font-weight: unset;
       justify-content: center;
     }
@@ -1897,7 +1901,345 @@ $font-5: "SF Pro Display Bold";
       padding: 0 15px;
       margin: 0 auto;
       width: 100%;
-      max-width: 1382px;
+      max-width: 1360px;
+    }
+
+    .header{
+      padding: 20px 53px 0 53px;
+      .navbar{
+        align-items: center;
+        .navbar-menu{
+          .navbar-nav{
+            .nav-item{
+              padding-left: 60px !important;
+              .nav-link{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .brand{
+      padding-top: 140px;
+      padding-bottom: 110px;
+      .title{
+        margin-bottom: 30px;
+        h2{
+          font-size: 45px;
+          span{
+            font-size: 60px;
+          }
+        }
+      }
+      .brand-bottom-img{
+        img{
+          width: 275px;
+        }
+      }
+      .title-content{
+        font-size: 30px;
+      }
+    }
+
+    .banner{
+      .banner-content{
+        width: 80%;
+        max-width: 800px;
+        h1{
+          font-size: 50px;
+          line-height: 1.2;
+          span{
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+    .banner-overlay-img{
+      .banner-overlay-bg{
+        .banner-img{
+          img{
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    .right-place{
+      padding-bottom: 145px;
+      .title{
+        width: 90%;
+        margin: 0 auto;
+        h3{
+          font-size: 35px;
+        }
+        h2{
+          font-size: 55px;
+        }
+      }
+
+      .right-place-content-bg{
+        .right-place-content{
+          p{
+            font-size: 15px;
+            padding-top: 25px;
+          }
+        }
+      }
+
+      .left-img-wrapper{
+        width: 33%;
+        height: 77%;
+      }
+
+      .right-place-content-bg{
+
+        .right-place-img{
+
+          img{
+            right: -30%;
+            width: 185px;
+            top: 0;
+            + img{
+              right: -8%;
+              width: 180px;
+              bottom: -119px;
+            }
+          }
+
+        }
+      }
+    }
+
+    .testimonial{
+      padding-bottom: 110px;
+      .testimonial-slider{
+        .slider-img-wrapper{
+          margin-bottom: 40px;
+        }
+        .slider-content{
+          .content{
+            h5{
+              font-size: 18px;
+              margin-bottom: 15px;
+            }
+            h2{
+              font-size: 24px;
+            }
+          }
+        }
+        .navigator{
+          bottom: 100px;
+        }
+      }
+
+      .testimonial-wrapper{
+        .testimonial-slide-1{
+          img{
+            margin-left: 100px;
+            width: 400px;
+          }
+        }
+      }
+
+      .title{
+        margin-bottom: 110px;
+        h3{
+          font-size: 55px;
+          width: 60%;
+          &:after{
+            right: -90%;
+          }
+        }
+      }
+    }
+
+    .get-in-touch{
+
+      .title{
+        .get-title{
+          font-size: 55px;
+        }
+      }
+      .why-us-icon{
+        .icon-box-bg{
+          height: 130px;
+          .icon-box{
+            height: 130px;
+            padding: 15px;
+            .icon{
+              img{
+                width: 60px;
+              }
+            }
+            .icon-content{
+              h5{
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .why-choose-list{
+        margin-top: 30px;
+        ul{
+          li{
+            font-size: 18px;
+            span{
+              svg{
+                width: 15px;
+              }
+            }
+            + li{
+              padding-top: 15px;
+            }
+          }
+        }
+      }
+      .get-form-bg{
+        padding-left: 60px;
+      }
+      .get-form{
+        .form-group{
+          label{
+            padding-bottom: 12px;
+            font-size: 18px;
+          }
+          .form-control{
+            padding: 20px;
+            margin-bottom: 15px;
+
+            &::placeholder{
+              font-size: 16px;
+            }
+          }
+          .form-btn{
+            margin-top: 10px;
+            padding: 16px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .suppliers{
+      .title{
+        margin: 0 auto 80px auto;
+        h2{
+          margin-bottom: 30px;
+          font-size: 55px;
+          &:before{
+            width: 5%;
+          }
+        }
+        h4{
+          font-size: 30px;
+        }
+      }
+      .suppliers-img{
+        .suppliers-content{
+          h4{
+            font-size: 25px;
+          }
+        }
+        .img-wrapper{
+          img{
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+
+    .mention{
+      .title{
+        margin-bottom: 30px;
+        h2{
+          font-size: 55px;
+        }
+      }
+      .mention-content{
+        width: 90%;
+        margin: 0 auto;
+        h3{
+          font-size: 40px;
+          span{
+            font-size: 55px;
+          }
+        }
+      }
+    }
+
+    .according-questions{
+      .title{
+        h2{
+          font-size: 55px;
+          margin-bottom: 20px;
+        }
+      }
+      .accordion{
+        .tab-holder{
+          margin-top: 60px;
+        }
+        .accordion-wrapper{
+          ul{
+            li{
+              padding: 25px;
+              p{
+                font-size: 20px;
+                padding-left: 0;
+              }
+              span{
+                height: 55px;
+                width: 40px;
+              }
+              .item-content.selected{
+                p{
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .according-btn{
+        padding: 20px;
+        margin-top: 35px;
+        width: 380px;
+      }
+    }
+
+    .footer{
+      .footer-title{
+        h3{
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      .footer-logo{
+        img{
+          width: 80px;
+        }
+      }
+    }
+
+
+
+
+  }
+}
+
+@media (max-width: 1366px) {
+
+  .info{
+    .custom-container{
+      padding: 0 15px;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1280px;
     }
 
     .header{
@@ -2017,11 +2359,11 @@ $font-5: "SF Pro Display Bold";
         .slider-content{
           .content{
             h5{
-              font-size: 15px;
-              margin-bottom: 10px;
+              font-size: 18px;
+              margin-bottom: 15px;
             }
             h2{
-              font-size: 20px;
+              font-size: 22px;
             }
           }
         }
@@ -2063,7 +2405,7 @@ $font-5: "SF Pro Display Bold";
           height: 130px;
           .icon-box{
             height: 130px;
-            padding: 15px 0 10px 0;
+            padding: 15px;
             .icon{
               img{
                 width: 60px;
@@ -2101,10 +2443,10 @@ $font-5: "SF Pro Display Bold";
         .form-group{
           label{
             padding-bottom: 10px;
-            font-size: 15px;
+            font-size: 16px;
           }
           .form-control{
-            padding: 10px;
+            padding: 20px;
             margin-bottom: 15px;
 
             &::placeholder{
@@ -2112,8 +2454,8 @@ $font-5: "SF Pro Display Bold";
             }
           }
           .form-btn{
-            padding: 15px;
-            font-size: 15px;
+            padding: 16px;
+            font-size: 18px;
           }
         }
       }
@@ -2202,343 +2544,7 @@ $font-5: "SF Pro Display Bold";
       .according-btn{
         padding: 20px;
         margin-top: 35px;
-        width: 400px;
-      }
-    }
-
-    .footer{
-      .footer-title{
-        h3{
-          font-size: 20px;
-          margin-bottom: 20px;
-        }
-      }
-      .footer-logo{
-        img{
-          width: 80px;
-        }
-      }
-    }
-
-
-
-
-  }
-}
-
-@media (max-width: 1366px) {
-
-  .info{
-    .custom-container{
-      padding: 0 15px;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 1382px;
-    }
-
-    .header{
-      padding: 20px 53px 0 53px;
-      .navbar{
-        align-items: center;
-        .navbar-menu{
-          .navbar-nav{
-            .nav-item{
-              padding-left: 60px !important;
-              .nav-link{
-                font-size: 20px;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .brand{
-      padding-top: 140px;
-      padding-bottom: 110px;
-      .title{
-        margin-bottom: 30px;
-        h2{
-          font-size: 45px;
-          span{
-            font-size: 60px;
-          }
-        }
-      }
-      .brand-bottom-img{
-        img{
-          width: 275px;
-        }
-      }
-      .title-content{
-        font-size: 30px;
-      }
-    }
-
-    .banner{
-        .banner-content{
-          width: 80%;
-          h1{
-            font-size: 50px;
-            line-height: 1.2;
-            span{
-              font-size: 40px;
-            }
-          }
-        }
-      }
-
-    .banner-overlay-img{
-      .banner-overlay-bg{
-        .banner-img{
-          img{
-            width: 90%;
-          }
-        }
-      }
-    }
-
-    .right-place{
-      padding-bottom: 145px;
-      .title{
-        width: 90%;
-        margin: 0 auto;
-        h3{
-          font-size: 35px;
-        }
-        h2{
-          font-size: 55px;
-        }
-      }
-
-      .right-place-content-bg{
-        .right-place-content{
-          p{
-            font-size: 15px;
-            padding-top: 25px;
-          }
-        }
-      }
-
-      .left-img-wrapper{
-        width: 33%;
-        height: 77%;
-      }
-
-      .right-place-content-bg{
-
-        .right-place-img{
-
-          img{
-            right: -30%;
-            width: 185px;
-            top: 0;
-            + img{
-              right: -8%;
-              width: 180px;
-              bottom: -119px;
-            }
-          }
-
-        }
-      }
-    }
-
-    .testimonial{
-      padding-bottom: 110px;
-      .testimonial-slider{
-        .slider-img-wrapper{
-          margin-bottom: 40px;
-        }
-        .slider-content{
-          .content{
-            h5{
-              font-size: 15px;
-              margin-bottom: 10px;
-            }
-            h2{
-              font-size: 20px;
-            }
-          }
-        }
-        .navigator{
-          bottom: 100px;
-        }
-      }
-
-      .testimonial-wrapper{
-        .testimonial-slide-1{
-          img{
-            margin-left: 100px;
-            width: 400px;
-          }
-        }
-      }
-
-      .title{
-        margin-bottom: 110px;
-        h3{
-          font-size: 55px;
-          width: 60%;
-          &:after{
-            right: -90%;
-          }
-        }
-      }
-    }
-
-    .get-in-touch{
-
-      .title{
-        .get-title{
-          font-size: 55px;
-        }
-      }
-      .why-us-icon{
-        .icon-box-bg{
-          height: 130px;
-          .icon-box{
-            height: 130px;
-            padding: 15px 0 10px 0;
-            .icon{
-              img{
-                width: 60px;
-              }
-            }
-            .icon-content{
-              h5{
-                font-size: 15px;
-              }
-            }
-          }
-        }
-      }
-
-      .why-choose-list{
-        margin-top: 30px;
-        ul{
-          li{
-            font-size: 15px;
-            span{
-              svg{
-                width: 15px;
-              }
-            }
-            + li{
-              padding-top: 10px;
-            }
-          }
-        }
-      }
-      .get-form-bg{
-        padding-left: 60px;
-      }
-      .get-form{
-        .form-group{
-          label{
-            padding-bottom: 10px;
-            font-size: 15px;
-          }
-          .form-control{
-            padding: 10px;
-            margin-bottom: 15px;
-
-            &::placeholder{
-              font-size: 15px;
-            }
-          }
-          .form-btn{
-            padding: 15px;
-            font-size: 15px;
-          }
-        }
-      }
-    }
-
-    .suppliers{
-      .title{
-        margin: 0 auto 80px auto;
-        h2{
-          margin-bottom: 30px;
-          font-size: 55px;
-          &:before{
-            width: 5%;
-          }
-        }
-        h4{
-          font-size: 30px;
-        }
-      }
-      .suppliers-img{
-        .suppliers-content{
-          h4{
-            font-size: 25px;
-          }
-        }
-        .img-wrapper{
-          img{
-            width: 200px;
-            height: 200px;
-          }
-        }
-      }
-    }
-
-    .mention{
-      .title{
-        margin-bottom: 30px;
-        h2{
-          font-size: 55px;
-        }
-      }
-      .mention-content{
-        width: 90%;
-        margin: 0 auto;
-        h3{
-          font-size: 40px;
-          span{
-            font-size: 55px;
-          }
-        }
-      }
-    }
-
-    .according-questions{
-      .title{
-        h2{
-          font-size: 55px;
-          margin-bottom: 20px;
-        }
-      }
-      .accordion{
-        .tab-holder{
-          margin-top: 60px;
-        }
-        .accordion-wrapper{
-          ul{
-            li{
-              padding: 15px;
-              p{
-                font-size: 18px;
-                padding-left: 0;
-              }
-              span{
-                height: 55px;
-                width: 40px;
-              }
-              .item-content.selected{
-                p{
-                  font-size: 15px;
-                }
-              }
-            }
-          }
-        }
-      }
-      .according-btn{
-        padding: 20px;
-        margin-top: 35px;
-        width: 400px;
+        width: 380px;
       }
     }
 
@@ -2945,147 +2951,147 @@ $font-5: "SF Pro Display Bold";
 }
 
 @media (max-width: 1024px) {
-    .info{
-      .header{
-        padding: 30px 30px 0 30px;
-        .logo{
-          a{
-            img{
-              width: 75px;
-              height: auto;
+  .info{
+    .header{
+      padding: 30px 30px 0 30px;
+      .logo{
+        a{
+          img{
+            width: 75px;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .banner-overlay-img{
+      .banner-overlay-bg{
+        .banner-img{
+          padding: 0 10px;
+          img{
+            width: 100%;
+          }
+          &.img-1{
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+
+    .brand{
+      padding-top: 100px;
+      padding-bottom: 80px;
+      .title{
+        margin-bottom: 0;
+        h2{
+          font-size: 50px;
+          margin-bottom: 60px;
+          span{
+            font-size: 60px;
+          }
+        }
+      }
+      .title-content{
+        font-size: 25px;
+      }
+      .brand-bottom-title{
+        h3{
+          font-size: 45px;
+        }
+      }
+
+      .brand-bottom-img{
+        img{
+          width: 240px;
+        }
+      }
+    }
+
+    .right-place{
+      .title{
+        h3{
+          font-size: 45px;
+          line-height: 1.2;
+        }
+        h2{
+          font-size: 55px;
+
+        }
+      }
+      .left-img-wrapper{
+        height: 80%;
+      }
+      .right-place-content-bg{
+        padding-left: 100px;
+        .right-place-img{
+          img{
+            width: 200px;
+            + img{
+              width: 170px;
+              bottom: -90px;
             }
           }
         }
       }
+    }
 
-      .banner-overlay-img{
-        .banner-overlay-bg{
-          .banner-img{
-            padding: 0 10px;
-            img{
-              width: 100%;
-            }
-            &.img-1{
-              margin-bottom: 15px;
-            }
-          }
+    .get-in-touch{
+      .title{
+        margin-top: 45px;
+        .get-title{
+          font-size: 55px;
         }
       }
-
-      .brand{
-        padding-top: 100px;
-        padding-bottom: 80px;
-        .title{
-          margin-bottom: 0;
-          h2{
-            font-size: 50px;
-            margin-bottom: 60px;
-            span{
+      .icon-box-bg{
+        height: 185px;
+        .icon-box{
+          padding: 20px 0 10px 0;
+          .icon{
+            img{
               font-size: 60px;
             }
           }
-        }
-        .title-content{
-          font-size: 25px;
-        }
-        .brand-bottom-title{
-          h3{
-            font-size: 45px;
-          }
-        }
-
-        .brand-bottom-img{
-          img{
-            width: 240px;
-          }
-        }
-      }
-
-      .right-place{
-        .title{
-          h3{
-            font-size: 45px;
-            line-height: 1.2;
-          }
-          h2{
-            font-size: 55px;
-
-          }
-        }
-        .left-img-wrapper{
-          height: 80%;
-        }
-        .right-place-content-bg{
-          padding-left: 100px;
-          .right-place-img{
-            img{
-              width: 200px;
-              + img{
-                width: 170px;
-                bottom: -90px;
-              }
-            }
-          }
-        }
-      }
-
-      .get-in-touch{
-        .title{
-          margin-top: 45px;
-          .get-title{
-            font-size: 55px;
-          }
-        }
-        .icon-box-bg{
-          height: 185px;
-          .icon-box{
-            padding: 20px 0 10px 0;
-            .icon{
-              img{
-                font-size: 60px;
-              }
-            }
-            .icon-content{
-              h5{
-                font-size: 15px;
-              }
-
-            }
-          }
-        }
-      }
-
-      .footer{
-        .footer-logo{
-          img{
-            width: 70px;
-          }
-        }
-        .footer-title{
-          h3{
-            font-size: 23px;
-          }
-        }
-        .footer-content{
-          .footer-content-bg{
-            width: 150px;
-            p{
+          .icon-content{
+            h5{
               font-size: 15px;
             }
+
           }
         }
       }
-
     }
+
+    .footer{
+      .footer-logo{
+        img{
+          width: 70px;
+        }
+      }
+      .footer-title{
+        h3{
+          font-size: 23px;
+        }
+      }
+      .footer-content{
+        .footer-content-bg{
+          width: 150px;
+          p{
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 
 @media (max-width: 991px) {
   .info{
-      .col-lg-12,
-      .col-lg-6{
-        width: 100%;
-      }
+    .col-lg-12,
+    .col-lg-6{
+      width: 100%;
+    }
 
     .section-py-lg{
       padding-top: 50px;
@@ -3308,7 +3314,7 @@ $font-5: "SF Pro Display Bold";
           margin-bottom: 15px;
         }
         h3{
-            font-size: 25px;
+          font-size: 25px;
         }
       }
       .accordion{
@@ -3722,21 +3728,21 @@ $font-5: "SF Pro Display Bold";
         .icon-box-bg{
           width: 190px;
           height: 150px;
-        .icon-box{
-          height: 140px;
-          .icon{
-            img{
-              width: 60px;
+          .icon-box{
+            height: 140px;
+            .icon{
+              img{
+                width: 60px;
+              }
             }
-          }
-          .icon-content{
-            h5{
-              font-size: 15px;
-            }
+            .icon-content{
+              h5{
+                font-size: 15px;
+              }
 
+            }
           }
         }
-      }
       }
       .why-choose-list{
         padding: 0 30px;
@@ -3803,7 +3809,7 @@ $font-5: "SF Pro Display Bold";
         .slider-content{
           .content{
             h5{
-            padding-right: 0;
+              padding-right: 0;
             }
           }
         }
