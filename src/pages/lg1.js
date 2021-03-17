@@ -66,6 +66,12 @@ export default class Lg1 extends Component {
                     name: 'OpenCoast'
                 }
             ],
+            contact_form: {
+                name: '',
+                email: '',
+                phone: '',
+                website: ''
+            }
         }
     }
 
@@ -120,8 +126,8 @@ export default class Lg1 extends Component {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: this.encode({
-                "form-name": event.target.getAttribute("name"),
-                ...name
+                "form-name": 'contact',
+                ...this.state.contact_form
             })
         }).then(() => alert('Form submitted successfully.')).catch(error => alert(error))
     }
@@ -477,20 +483,60 @@ export default class Lg1 extends Component {
                                         <form className="get-form" name="contact-form" data-netlify="true" method="POST" onSubmit={this.handleSubmit}>
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
-                                                <input className="form-control" name="fullName" type="text" placeholder="John Dev"/>
+                                                <input className="form-control" value={this.state.contact_form.name} onChange={(e) => {
+                                                    let value = e.target.value;
+                                                    this.setState(prevState => {
+                                                        return {
+                                                            contact_form: {
+                                                                ...prevState.contact_form,
+                                                                name: value
+                                                            }
+                                                        }
+                                                    })
+                                                }} name="fullName" type="text" placeholder="John Dev"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="email">Email</label>
-                                                <input className="form-control" type="email" name="email"
+                                                <input className="form-control" type="email" name="email" value={this.state.contact_form.email} onChange={(e) => {
+                                                    let value = e.target.value;
+                                                    this.setState(prevState => {
+                                                        return {
+                                                            contact_form: {
+                                                                ...prevState.contact_form,
+                                                                email: value
+                                                            }
+                                                        }
+                                                    })
+                                                }}
                                                        placeholder="johndev@gmail.com"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="number">Phone Number</label>
-                                                <input className="form-control" type="text" name="phoneNumber" placeholder="0123456789"/>
+                                                <input className="form-control" type="text" name="phoneNumber" value={this.state.contact_form.phone} onChange={(e) => {
+                                                    let value = e.target.value;
+                                                    this.setState(prevState => {
+                                                        return {
+                                                            contact_form: {
+                                                                ...prevState.contact_form,
+                                                                phone: value
+                                                            }
+                                                        }
+                                                    })
+                                                }} placeholder="0123456789"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="website">Website</label>
-                                                <input className="form-control" type="text" name="website"
+                                                <input className="form-control" type="text" name="website" value={this.state.contact_form.website} onChange={(e) => {
+                                                    let value = e.target.value;
+                                                    this.setState(prevState => {
+                                                        return {
+                                                            contact_form: {
+                                                                ...prevState.contact_form,
+                                                                website: value
+                                                            }
+                                                        }
+                                                    })
+                                                }}
                                                        placeholder="www.website.com"/>
                                             </div>
                                             <div className="form-group">
