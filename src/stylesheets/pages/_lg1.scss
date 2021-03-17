@@ -194,27 +194,27 @@
   }
 
   @font-face {
-    src: url(../assets/fonts/SaolDisplay-Regular.ttf);
+    src: url('#{$fa-font-path}/SaolDisplay-Regular.ttf');
     font-family: Saol Display;
   }
 
   @font-face {
-    src: url(../assets/fonts/PlayfairDisplay-Regular.ttf);
+    src: url('#{$fa-font-path}/PlayfairDisplay-Regular.ttf');
     font-family: Playfair Display;
   }
 
   @font-face {
-    src: url(../assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+    src: url('#{$fa-font-path}/PlayfairDisplay-Italic-VariableFont_wght.ttf');
     font-family: Playfair Display Italic;
   }
 
   @font-face {
-    src: url(../assets/fonts/FontsFree-Net-SFProDisplay-Regular.ttf);
+    src: url('#{$fa-font-path}/FontsFree-Net-SFProDisplay-Regular.ttf');
     font-family: SF Pro Display;
   }
 
   @font-face {
-    src: url(../assets/fonts/FontsFree-Net-SFProDisplay-Bold.ttf);
+    src: url('#{$fa-font-path}/FontsFree-Net-SFProDisplay-Bold.ttf');
     font-family: SF Pro Display Bold;
   }
 
