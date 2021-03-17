@@ -490,7 +490,7 @@ export default class Lg1 extends Component {
                                                 Get In Touch
                                             </h3>
                                         </div>
-                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST" onSubmit={this.handleSubmit}>
+                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST">
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
                                                 <input className="form-control" value={this.state.contact_form.fullName} onChange={(e) => {
