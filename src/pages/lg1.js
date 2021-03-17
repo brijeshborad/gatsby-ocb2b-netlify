@@ -108,6 +108,24 @@ export default class Lg1 extends Component {
         section.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
 
+    encode(data) {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&")
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: this.encode({
+                "form-name": event.target.getAttribute("name"),
+                ...name
+            })
+        }).then(() => alert('Form submitted successfully.')).catch(error => alert(error))
+    }
+
     render() {
         return (
             <div>
@@ -456,7 +474,7 @@ export default class Lg1 extends Component {
                                                 Get In Touch
                                             </h3>
                                         </div>
-                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST">
+                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST" onSubmit={this.handleSubmit}>
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
                                                 <input className="form-control" name="fullName" type="text" placeholder="John Dev"/>
@@ -476,6 +494,8 @@ export default class Lg1 extends Component {
                                                        placeholder="www.website.com"/>
                                             </div>
                                             <div className="form-group">
+                                                <input type="hidden" name="form-name" value="contact-form" />
+
                                                 <button type="submit" className="btn form-btn">
                                                     See full brand list + catalog
                                                 </button>
