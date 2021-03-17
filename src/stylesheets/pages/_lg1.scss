@@ -1,3 +1,37 @@
+@font-face {
+  src: url('#{$fa-font-path}/SaolDisplay-Regular.ttf');
+  font-family: Saol Display;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  src: url('#{$fa-font-path}/PlayfairDisplay-Regular.ttf');
+  font-family: Playfair Display;
+}
+
+@font-face {
+  src: url('#{$fa-font-path}/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+  font-family: Playfair Display Italic;
+}
+
+@font-face {
+  src: url('#{$fa-font-path}/FontsFree-Net-SFProDisplay-Regular.ttf');
+  font-family: SF Pro Display;
+}
+
+@font-face {
+  src: url('#{$fa-font-path}/FontsFree-Net-SFProDisplay-Bold.ttf');
+  font-family: SF Pro Display Bold;
+}
+
+
+// variables
+$font-1: 'Saol Display';
+$font-2: 'Playfair Display';
+$font-3: 'Playfair Display Italic';
+$font-4: "SF Pro Display";
+$font-5: "SF Pro Display Bold";
 
 #artibot-wrapper--3PaNf{
   display: none;
@@ -192,40 +226,6 @@
     margin-right: auto;
     margin-left: auto;
   }
-
-  @font-face {
-    src: url('#{$fa-font-path}/SaolDisplay-Regular.ttf');
-    font-family: Saol Display;
-  }
-
-  @font-face {
-    src: url('#{$fa-font-path}/PlayfairDisplay-Regular.ttf');
-    font-family: Playfair Display;
-  }
-
-  @font-face {
-    src: url('#{$fa-font-path}/PlayfairDisplay-Italic-VariableFont_wght.ttf');
-    font-family: Playfair Display Italic;
-  }
-
-  @font-face {
-    src: url('#{$fa-font-path}/FontsFree-Net-SFProDisplay-Regular.ttf');
-    font-family: SF Pro Display;
-  }
-
-  @font-face {
-    src: url('#{$fa-font-path}/FontsFree-Net-SFProDisplay-Bold.ttf');
-    font-family: SF Pro Display Bold;
-  }
-
-
-  // variables
-  $font-1: 'Saol Display';
-  $font-2: 'Playfair Display';
-  $font-3: 'Playfair Display Italic';
-  $font-4: "SF Pro Display";
-  $font-5: "SF Pro Display Bold";
-
 
   .section-py-lg {
     padding-top: 100px;
