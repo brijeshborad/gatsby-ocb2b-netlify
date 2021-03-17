@@ -126,7 +126,7 @@ export default class Lg1 extends Component {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: this.encode({
-                "form-name": 'contact',
+                "form-name": 'contact-form',
                 ...this.state.contact_form
             })
         }).then(() => alert('Form submitted successfully.')).catch(error => alert(error))
