@@ -12,6 +12,14 @@ export default class Tabs extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.tabData !== prevProps.tabData) {
+      this.setState({
+        tabData: this.props.tabData
+      })
+    }
+  }
+
   handleClick = (tabName) => {
     this.setState({ active: tabName })
   }

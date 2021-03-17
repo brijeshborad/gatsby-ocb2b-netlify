@@ -7,6 +7,43 @@ export default class Lg1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            viewMore: false,
+            tabDataAll: [
+                {
+                    title: 'I’ve had a hard time with online wholesale before because in order buy wholesale products, there are big Minimum Order Quantities—it’s hard to find wholesale suppliers for small business. How do you help with this?',
+                    content: 'We understand this problem and our platform actually solves this. Many of our suppliers are happy to work with small businesses, and don’t require any MOQ.'
+                },
+                {
+                    title: 'I know many fashion wholesale vendors don’t offer consignment inventory or consignment stock—it seems you do. How does this work?',
+                    content: 'Some of the Suppliers in our network actually have consignment warehouses, so if you want consigned inventory from these consignment suppliers you’ll have to leave your information so one of our representatives can reach out to you.'
+                },
+                {
+                    title: 'We’re looking for wholesale suppliers, especially wholesale suppliers in the USA, that are willing to be suppliers for our online store?',
+                    content: 'These suppliers will be available to you, especially if your focus is on the USA. They have a lot of experience working with online stores.'
+                },
+                {
+                    title: 'Is your platform more of a product sourcing website, product sourcing platform, or B2B online marketplace?',
+                    content: 'We are probably best described as a product sourcing platform, though it can feel like a marketplace where you can choose products from different suppliers. You can access our websitefrom anywhere to see all of our offerings.'
+                },
+                {
+                    title: 'Checking out wholesale merchandise catalogs via clothing marketplaces can be difficult because wholesale clothing vendors use confusing spreadsheets with poor images. This is a problem with most clothing vendors. Do you make this easier?',
+                    content: 'Yes, everything including product description, stock levels, and prices can be viewed digitallyon our web platform. Each product listing also comes with at least 3 high quality images.'
+                }
+            ],
+            tabDataLess: [
+                {
+                    title: 'I’ve had a hard time with online wholesale before because in order buy wholesale products, there are big Minimum Order Quantities—it’s hard to find wholesale suppliers for small business. How do you help with this?',
+                    content: 'We understand this problem and our platform actually solves this. Many of our suppliers are happy to work with small businesses, and don’t require any MOQ.'
+                },
+                {
+                    title: 'I know many fashion wholesale vendors don’t offer consignment inventory or consignment stock—it seems you do. How does this work?',
+                    content: 'Some of the Suppliers in our network actually have consignment warehouses, so if you want consigned inventory from these consignment suppliers you’ll have to leave your information so one of our representatives can reach out to you.'
+                },
+                {
+                    title: 'We’re looking for wholesale suppliers, especially wholesale suppliers in the USA, that are willing to be suppliers for our online store?',
+                    content: 'These suppliers will be available to you, especially if your focus is on the USA. They have a lot of experience working with online stores.'
+                },
+            ],
             testimonialIndex: 0,
             testimonialImageIndex: 0,
             testimonialsImageList: [
@@ -560,7 +597,9 @@ export default class Lg1 extends Component {
                                         <div className="slider-content">
                                             {this.state.testimonialsList.map((item, index) => {
                                                 return (
-                                                    <div className={`testimonial-content-background ${index === this.state.testimonialIndex ? 'active': ''}`} key={index}>
+                                                    <div
+                                                        className={`testimonial-content-background ${index === this.state.testimonialIndex ? 'active' : ''}`}
+                                                        key={index}>
                                                         <div className="slider-img-wrapper">
                                                             <img className="img-fluid"
                                                                  src={item.image}
@@ -593,13 +632,16 @@ export default class Lg1 extends Component {
                                     <div className="testimonial-wrapper">
                                         <div className="testimonial-slide-1">
                                             {this.state.testimonialsImageList.map((item, index) => {
-                                                return <img key={index} className={`img-fluid ${index === this.state.testimonialImageIndex ? 'active' : ''}`} src={item} alt=""/>
+                                                return <img key={index}
+                                                            className={`img-fluid ${index === this.state.testimonialImageIndex ? 'active' : ''}`}
+                                                            src={item} alt=""/>
                                             })}
                                         </div>
                                         <div className="navigator-dotes">
                                             <ul>
                                                 {this.state.testimonialsImageList.map((item, index) => (
-                                                    <li key={index} onClick={() => this.setIndex(index)} className={index === this.state.testimonialImageIndex ? 'active' : ''}/>
+                                                    <li key={index} onClick={() => this.setIndex(index)}
+                                                        className={index === this.state.testimonialImageIndex ? 'active' : ''}/>
                                                 ))}
                                             </ul>
                                         </div>
@@ -619,73 +661,23 @@ export default class Lg1 extends Component {
                                         <h2>
                                             Have Any Questions?
                                         </h2>
-                                        <h3>
-                                            We Are Here To Help
-                                        </h3>
                                     </div>
                                     <div className="accordion" id="accordionExample">
                                         <Tabs tabData={[
                                             {
-                                                tabData: [
-                                                    {
-                                                        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cars at eros lacus',
-                                                        content: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus\n' +
-                                                            'terry richardson ad squid. 3 wolf moon officia aute, non cupidatat\n' +
-                                                            'skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\n' +
-                                                            'Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid\n' +
-                                                            'single-origin coffee nulla assumenda shoreditch et. Nihil anim\n' +
-                                                            'keffiyeh helvetica, craft beer labore wes anderson cred nesciunt\n' +
-                                                            'sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings\n' +
-                                                            'occaecat craft beer farm-to-table, raw denim aesthetic synth\n' +
-                                                            'nesciunt you probably haven\'t heard of them accusamus labore\n' +
-                                                            'sustainable VHS.'
-                                                    },
-                                                    {
-                                                        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cars at eros lacus',
-                                                        content: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus\n' +
-                                                            'terry richardson ad squid. 3 wolf moon officia aute, non cupidatat\n' +
-                                                            'skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\n' +
-                                                            'Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid\n' +
-                                                            'single-origin coffee nulla assumenda shoreditch et. Nihil anim\n' +
-                                                            'keffiyeh helvetica, craft beer labore wes anderson cred nesciunt\n' +
-                                                            'sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings\n' +
-                                                            'occaecat craft beer farm-to-table, raw denim aesthetic synth\n' +
-                                                            'nesciunt you probably haven\'t heard of them accusamus labore\n' +
-                                                            'sustainable VHS.'
-                                                    },
-                                                    {
-                                                        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cars at eros lacus',
-                                                        content: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus\n' +
-                                                            'terry richardson ad squid. 3 wolf moon officia aute, non cupidatat\n' +
-                                                            'skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\n' +
-                                                            'Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid\n' +
-                                                            'single-origin coffee nulla assumenda shoreditch et. Nihil anim\n' +
-                                                            'keffiyeh helvetica, craft beer labore wes anderson cred nesciunt\n' +
-                                                            'sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings\n' +
-                                                            'occaecat craft beer farm-to-table, raw denim aesthetic synth\n' +
-                                                            'nesciunt you probably haven\'t heard of them accusamus labore\n' +
-                                                            'sustainable VHS.'
-                                                    },
-                                                    {
-                                                        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cars at eros lacus',
-                                                        content: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus\n' +
-                                                            'terry richardson ad squid. 3 wolf moon officia aute, non cupidatat\n' +
-                                                            'skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\n' +
-                                                            'Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid\n' +
-                                                            'single-origin coffee nulla assumenda shoreditch et. Nihil anim\n' +
-                                                            'keffiyeh helvetica, craft beer labore wes anderson cred nesciunt\n' +
-                                                            'sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings\n' +
-                                                            'occaecat craft beer farm-to-table, raw denim aesthetic synth\n' +
-                                                            'nesciunt you probably haven\'t heard of them accusamus labore\n' +
-                                                            'sustainable VHS.'
-                                                    }
-                                                ]
+                                                tabData: (this.state.viewMore ? this.state.tabDataAll : this.state.tabDataLess)
                                             }
                                         ]}/>
 
 
-                                        <button className="btn according-btn mx-auto">
-                                            View More
+                                        <button className="btn according-btn mx-auto" onClick={() => {
+                                            this.setState(prevState => {
+                                                return {
+                                                    viewMore: !prevState.viewMore
+                                                }
+                                            })
+                                        }}>
+                                            View {this.state.viewMore ? 'Less' : 'More'}
                                         </button>
                                     </div>
 
@@ -702,9 +694,32 @@ export default class Lg1 extends Component {
                                 <div className="col-lg-3">
                                     <div className="footer-logo">
                                         <img src={require('../assets/images/info/footer-logo.png')} alt=""/>
-                                        <p>Open coast HQ 240 Kent Avenue Brookln, New york 11249</p>
                                     </div>
 
+                                </div>
+                                <div className="col-lg-3">
+                                    <div className="footer-content">
+                                        <div className="footer-title">
+                                            <h3>
+                                                New york
+                                            </h3>
+                                        </div>
+                                        <div className='footer-content-bg'>
+                                            <p>240 Kent Avenue Brookln, New york 11249</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-3">
+                                    <div className="footer-content">
+                                        <div className="footer-title">
+                                            <h3>
+                                                Luxembourg
+                                            </h3>
+                                        </div>
+                                        <div className='footer-content-bg'>
+                                            <p>29, BLDG Prince Henri L - 1724 LU </p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="col-lg-3">
                                     <div className="footer-content">
@@ -727,22 +742,6 @@ export default class Lg1 extends Component {
                                                 <a href="#"> Twitter</a>
                                             </li>
                                         </ul>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="footer-form">
-                                        <div className="footer-title">
-                                            <h3>
-                                                Signup fore Newslleter
-                                            </h3>
-                                        </div>
-                                        <form>
-                                            <div className="form-group">
-                                                <input type="email" className="form-control"
-                                                       placeholder="johndev@gmail.com"/>
-                                                <button className="btn footer-from-btn">Subscribe</button>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
