@@ -456,27 +456,27 @@ export default class Lg1 extends Component {
                                                 Get In Touch
                                             </h3>
                                         </div>
-                                        <form className="get-form" data-netlify={true} method="POST">
+                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST">
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
-                                                <input className="form-control" type="text" placeholder="John Dev"/>
+                                                <input className="form-control" name="fullName" type="text" placeholder="John Dev"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="email">Email</label>
-                                                <input className="form-control" type="email"
+                                                <input className="form-control" type="email" name="email"
                                                        placeholder="johndev@gmail.com"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="number">Phone Number</label>
-                                                <input className="form-control" type="text" placeholder="0123456789"/>
+                                                <input className="form-control" type="text" name="phoneNumber" placeholder="0123456789"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="website">Website</label>
-                                                <input className="form-control" type="text"
+                                                <input className="form-control" type="text" name="website"
                                                        placeholder="www.website.com"/>
                                             </div>
                                             <div className="form-group">
-                                                <button className="btn form-btn">
+                                                <button type="submit" className="btn form-btn">
                                                     See full brand list + catalog
                                                 </button>
                                             </div>
