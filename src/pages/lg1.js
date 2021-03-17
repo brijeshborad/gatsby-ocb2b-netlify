@@ -153,7 +153,7 @@ export default class Lg1 extends Component {
                 <main className="info">
                     {/* header start */}
                     <header className="header" ref={ref => this.header = ref}>
-                        <div className="container-fluid">
+                        <div className="container-custom">
                             <div className="row">
                                 <div className="col-12">
                                     <nav className="navbar d-flex justify-content-between navbar-expand-lg">
@@ -206,7 +206,7 @@ export default class Lg1 extends Component {
                     {/* header end */}
                     {/*Banner Start*/}
                     <section className="banner text-center section-pt-lg">
-                        <div className="container-fluid">
+                        <div className="container-custom">
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="banner-content mx-auto d-flex align-itmes-center">
@@ -566,7 +566,7 @@ export default class Lg1 extends Component {
 
                     {/*Suppliers Start*/}
                     <section className="suppliers section-py-lg">
-                        <div className="custom-container">
+                        <div className="container-custom">
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="title text-center">

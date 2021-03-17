@@ -900,6 +900,7 @@ $font-5: "SF Pro Display Bold";
         bottom: -150px;
         left: 0;
         cursor: pointer;
+        display: none;
         ul{
           display: flex;
           padding: 0;
@@ -1811,102 +1812,479 @@ $font-5: "SF Pro Display Bold";
   }
 }
 
+//@media (max-width: 1440px) {
+//  .info{
+//    .logo{
+//      a{
+//        img{
+//          width: 80px;
+//          height: auto;
+//        }
+//      }
+//    }
+//    .header{
+//      .navbar{
+//        .navbar-menu{
+//          .navbar-nav{
+//            .nav-item{
+//              .nav-link{
+//                font-size: 25px;
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//    .banner{
+//      .banner-content{
+//        h1{
+//          font-size: 65px;
+//        }
+//      }
+//    }
+//    .banner-overlay-img{
+//        .banner-overlay-bg{
+//          .banner-img{
+//            img{
+//              width: 100%;
+//            }
+//          }
+//        }
+//      }
+//    .get-in-touch{
+//      .why-us-icon{
+//        .icon-box-bg{
+//          .icon-box{
+//            height: 255px;
+//            .icon{
+//              img{
+//                width: 100px;
+//              }
+//            }
+//          }
+//        }
+//      }
+//      .why-choose-list{
+//        ul{
+//          li{
+//            font-size: 25px;
+//          }
+//        }
+//      }
+//     .why-us-icon .icon-box .icon-content h5{
+//      font-size: 25px;
+//    }
+//    }
+//    .footer{
+//      .footer-logo{
+//        img{
+//          width: 120px;
+//        }
+//      }
+//      .footer-title{
+//        h3{
+//          font-size: 35px;
+//        }
+//      }
+//    }
+//  }
+//}
+
 @media (max-width: 1440px) {
-  .info{
-    .logo{
-      a{
-        img{
-          width: 80px;
-          height: auto;
-        }
-      }
-    }
-    .header{
-      .navbar{
-        .navbar-menu{
-          .navbar-nav{
-            .nav-item{
-              .nav-link{
-                font-size: 25px;
-              }
-            }
-          }
-        }
-      }
-    }
-    .banner{
-      .banner-content{
-        h1{
-          font-size: 65px;
-        }
-      }
-    }
-    .banner-overlay-img{
-        .banner-overlay-bg{
-          .banner-img{
-            img{
-              width: 100%;
-            }
-          }
-        }
-      }
-    .get-in-touch{
-      .why-us-icon{
-        .icon-box-bg{
-          .icon-box{
-            height: 255px;
-            .icon{
-              img{
-                width: 100px;
-              }
-            }
-          }
-        }
-      }
-      .why-choose-list{
-        ul{
-          li{
-            font-size: 25px;
-          }
-        }
-      }
-     .why-us-icon .icon-box .icon-content h5{
-      font-size: 25px;
-    }
-    }
-    .footer{
-      .footer-logo{
-        img{
-          width: 120px;
-        }
-      }
-      .footer-title{
-        h3{
-          font-size: 35px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1366px) {
-
 
   .info{
     .custom-container{
-      max-width: 1366px;
+      padding: 0 15px;
+      margin: 0 auto;
       width: 100%;
-      padding-left: 15px;
-      padding-right: 15px;
+      max-width: 1382px;
+    }
+
+    .header{
+      padding: 20px 53px 0 53px;
+      .navbar{
+        align-items: center;
+        .navbar-menu{
+          .navbar-nav{
+            .nav-item{
+              padding-left: 60px !important;
+              .nav-link{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
     }
 
     .brand{
       padding-top: 140px;
       padding-bottom: 110px;
+      .title{
+        margin-bottom: 30px;
+        h2{
+          font-size: 45px;
+          span{
+            font-size: 60px;
+          }
+        }
+      }
+      .brand-bottom-img{
+        img{
+          width: 275px;
+        }
+      }
+      .title-content{
+        font-size: 30px;
+      }
     }
-      .banner{
+
+    .banner{
+      .banner-content{
+        width: 80%;
+        h1{
+          font-size: 50px;
+          line-height: 1.2;
+          span{
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+    .banner-overlay-img{
+      .banner-overlay-bg{
+        .banner-img{
+          img{
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    .right-place{
+      padding-bottom: 145px;
+      .title{
+        width: 90%;
+        margin: 0 auto;
+        h3{
+          font-size: 35px;
+        }
+        h2{
+          font-size: 55px;
+        }
+      }
+
+      .right-place-content-bg{
+        .right-place-content{
+          p{
+            font-size: 15px;
+            padding-top: 25px;
+          }
+        }
+      }
+
+      .left-img-wrapper{
+        width: 33%;
+        height: 77%;
+      }
+
+      .right-place-content-bg{
+
+        .right-place-img{
+
+          img{
+            right: -30%;
+            width: 185px;
+            top: 0;
+            + img{
+              right: -8%;
+              width: 180px;
+              bottom: -119px;
+            }
+          }
+
+        }
+      }
+    }
+
+    .testimonial{
+      padding-bottom: 110px;
+      .testimonial-slider{
+        .slider-img-wrapper{
+          margin-bottom: 40px;
+        }
+        .slider-content{
+          .content{
+            h5{
+              font-size: 15px;
+              margin-bottom: 10px;
+            }
+            h2{
+              font-size: 20px;
+            }
+          }
+        }
+        .navigator{
+          bottom: 100px;
+        }
+      }
+
+      .testimonial-wrapper{
+        .testimonial-slide-1{
+          img{
+            margin-left: 100px;
+            width: 400px;
+          }
+        }
+      }
+
+      .title{
+        margin-bottom: 110px;
+        h3{
+          font-size: 55px;
+          width: 60%;
+          &:after{
+            right: -90%;
+          }
+        }
+      }
+    }
+
+    .get-in-touch{
+
+      .title{
+        .get-title{
+          font-size: 55px;
+        }
+      }
+      .why-us-icon{
+        .icon-box-bg{
+          height: 130px;
+          .icon-box{
+            height: 130px;
+            padding: 15px 0 10px 0;
+            .icon{
+              img{
+                width: 60px;
+              }
+            }
+            .icon-content{
+              h5{
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+
+      .why-choose-list{
+        margin-top: 30px;
+        ul{
+          li{
+            font-size: 15px;
+            span{
+              svg{
+                width: 15px;
+              }
+            }
+            + li{
+              padding-top: 10px;
+            }
+          }
+        }
+      }
+      .get-form-bg{
+        padding-left: 60px;
+      }
+      .get-form{
+        .form-group{
+          label{
+            padding-bottom: 10px;
+            font-size: 15px;
+          }
+          .form-control{
+            padding: 10px;
+            margin-bottom: 15px;
+
+            &::placeholder{
+              font-size: 15px;
+            }
+          }
+          .form-btn{
+            padding: 15px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .suppliers{
+      .title{
+        margin: 0 auto 80px auto;
+        h2{
+          margin-bottom: 30px;
+          font-size: 55px;
+          &:before{
+            width: 5%;
+          }
+        }
+        h4{
+          font-size: 30px;
+        }
+      }
+      .suppliers-img{
+        .suppliers-content{
+          h4{
+            font-size: 25px;
+          }
+        }
+        .img-wrapper{
+          img{
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+
+    .mention{
+      .title{
+        margin-bottom: 30px;
+        h2{
+          font-size: 55px;
+        }
+      }
+      .mention-content{
+        width: 90%;
+        margin: 0 auto;
+        h3{
+          font-size: 40px;
+          span{
+            font-size: 55px;
+          }
+        }
+      }
+    }
+
+    .according-questions{
+      .title{
+        h2{
+          font-size: 55px;
+          margin-bottom: 20px;
+        }
+      }
+      .accordion{
+        .tab-holder{
+          margin-top: 60px;
+        }
+        .accordion-wrapper{
+          ul{
+            li{
+              padding: 15px;
+              p{
+                font-size: 18px;
+                padding-left: 0;
+              }
+              span{
+                height: 55px;
+                width: 40px;
+              }
+              .item-content.selected{
+                p{
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .according-btn{
+        padding: 20px;
+        margin-top: 35px;
+        width: 400px;
+      }
+    }
+
+    .footer{
+      .footer-title{
+        h3{
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      .footer-logo{
+        img{
+          width: 80px;
+        }
+      }
+    }
+
+
+
+
+  }
+}
+
+@media (max-width: 1366px) {
+
+  .info{
+    .custom-container{
+      padding: 0 15px;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1382px;
+    }
+
+    .header{
+      padding: 20px 53px 0 53px;
+      .navbar{
+        align-items: center;
+        .navbar-menu{
+          .navbar-nav{
+            .nav-item{
+              padding-left: 60px !important;
+              .nav-link{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .brand{
+      padding-top: 140px;
+      padding-bottom: 110px;
+      .title{
+        margin-bottom: 30px;
+        h2{
+          font-size: 45px;
+          span{
+            font-size: 60px;
+          }
+        }
+      }
+      .brand-bottom-img{
+        img{
+          width: 275px;
+        }
+      }
+      .title-content{
+        font-size: 30px;
+      }
+    }
+
+    .banner{
         .banner-content{
           width: 80%;
+          h1{
+            font-size: 50px;
+            line-height: 1.2;
+            span{
+              font-size: 40px;
+            }
+          }
         }
       }
 
@@ -1921,29 +2299,30 @@ $font-5: "SF Pro Display Bold";
     }
 
     .right-place{
-
+      padding-bottom: 145px;
       .title{
         width: 90%;
         margin: 0 auto;
         h3{
-          font-size: 53px;
+          font-size: 35px;
         }
         h2{
-          font-size: 70px;
+          font-size: 55px;
         }
       }
 
       .right-place-content-bg{
         .right-place-content{
           p{
-            font-size: 25px;
+            font-size: 15px;
+            padding-top: 25px;
           }
         }
       }
 
       .left-img-wrapper{
         width: 33%;
-
+        height: 77%;
       }
 
       .right-place-content-bg{
@@ -1951,12 +2330,13 @@ $font-5: "SF Pro Display Bold";
         .right-place-img{
 
           img{
-            right: -44%;
-            width: 300px;
+            right: -30%;
+            width: 185px;
+            top: 0;
             + img{
-              right: -14%;
-              width: 250px;
-              bottom: -140px;
+              right: -8%;
+              width: 180px;
+              bottom: -119px;
             }
           }
 
@@ -1965,18 +2345,41 @@ $font-5: "SF Pro Display Bold";
     }
 
     .testimonial{
+      padding-bottom: 110px;
+      .testimonial-slider{
+        .slider-img-wrapper{
+          margin-bottom: 40px;
+        }
+        .slider-content{
+          .content{
+            h5{
+              font-size: 15px;
+              margin-bottom: 10px;
+            }
+            h2{
+              font-size: 20px;
+            }
+          }
+        }
+        .navigator{
+          bottom: 100px;
+        }
+      }
 
       .testimonial-wrapper{
         .testimonial-slide-1{
           img{
-            width: 580px;
+            margin-left: 100px;
+            width: 400px;
           }
         }
       }
 
       .title{
+        margin-bottom: 110px;
         h3{
-          font-size: 70px;
+          font-size: 55px;
+          width: 60%;
           &:after{
             right: -90%;
           }
@@ -1985,55 +2388,68 @@ $font-5: "SF Pro Display Bold";
     }
 
     .get-in-touch{
+
       .title{
         .get-title{
-          font-size: 70px;
+          font-size: 55px;
         }
       }
-      .icon-box-bg{
-        height: 230px;
-        .icon-box{
-          height: 225px;
-          padding: 30px 0 10px 0;
-          .icon{
-            img{
-              width: 90px;
+      .why-us-icon{
+        .icon-box-bg{
+          height: 130px;
+          .icon-box{
+            height: 130px;
+            padding: 15px 0 10px 0;
+            .icon{
+              img{
+                width: 60px;
+              }
             }
-          }
-          .icon-content{
-            h5{
-              font-size: 25px;
-            }
-          }
-        }
-      }
-      .why-choose-list{
-        margin-top: 50px;
-        ul{
-          li{
-            font-size: 25px;
-            span{
-              svg{
-                width: 25px;
+            .icon-content{
+              h5{
+                font-size: 15px;
               }
             }
           }
         }
       }
+
+      .why-choose-list{
+        margin-top: 30px;
+        ul{
+          li{
+            font-size: 15px;
+            span{
+              svg{
+                width: 15px;
+              }
+            }
+            + li{
+              padding-top: 10px;
+            }
+          }
+        }
+      }
+      .get-form-bg{
+        padding-left: 60px;
+      }
       .get-form{
         .form-group{
           label{
             padding-bottom: 10px;
+            font-size: 15px;
           }
           .form-control{
-            padding: 30px;
-            margin-bottom: 25px;
+            padding: 10px;
+            margin-bottom: 15px;
 
+            &::placeholder{
+              font-size: 15px;
+            }
           }
           .form-btn{
-            padding: 25px;
-            width: 100%;
-            font-size: 25px;
+            padding: 15px;
+            font-size: 15px;
           }
         }
       }
@@ -2041,20 +2457,28 @@ $font-5: "SF Pro Display Bold";
 
     .suppliers{
       .title{
-        margin-bottom: 90px;
+        margin: 0 auto 80px auto;
         h2{
-          margin-bottom: 40px;
-          font-size: 70px;
+          margin-bottom: 30px;
+          font-size: 55px;
+          &:before{
+            width: 5%;
+          }
         }
         h4{
-          font-size: 35px;
+          font-size: 30px;
         }
       }
       .suppliers-img{
+        .suppliers-content{
+          h4{
+            font-size: 25px;
+          }
+        }
         .img-wrapper{
           img{
-            width: 280px;
-            height: 280px;
+            width: 200px;
+            height: 200px;
           }
         }
       }
@@ -2062,16 +2486,19 @@ $font-5: "SF Pro Display Bold";
 
     .mention{
       .title{
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         h2{
-          font-size: 70px;
+          font-size: 55px;
         }
       }
       .mention-content{
         width: 90%;
         margin: 0 auto;
         h3{
-          font-size: 48px;
+          font-size: 40px;
+          span{
+            font-size: 55px;
+          }
         }
       }
     }
@@ -2079,7 +2506,7 @@ $font-5: "SF Pro Display Bold";
     .according-questions{
       .title{
         h2{
-          font-size: 70px;
+          font-size: 55px;
           margin-bottom: 20px;
         }
       }
@@ -2090,46 +2517,48 @@ $font-5: "SF Pro Display Bold";
         .accordion-wrapper{
           ul{
             li{
-              padding: 35px;
+              padding: 15px;
               p{
-                width: 100%;
+                font-size: 18px;
+                padding-left: 0;
+              }
+              span{
+                height: 55px;
+                width: 40px;
+              }
+              .item-content.selected{
+                p{
+                  font-size: 15px;
+                }
               }
             }
           }
         }
-
-        .accordion-btn{
-          margin-top: 75px;
-        }
+      }
+      .according-btn{
+        padding: 20px;
+        margin-top: 35px;
+        width: 400px;
       }
     }
 
     .footer{
       .footer-title{
         h3{
-          font-size: 35px;
+          font-size: 20px;
           margin-bottom: 20px;
         }
       }
       .footer-logo{
-        p{
-          padding-top: 30px;
+        img{
+          width: 80px;
         }
       }
     }
 
-    .footer{
-      .footer-logo{
-        img{
-          width: 100px;
-        }
-      }
-      .footer-title{
-        h3{
-          font-size: 32px;
-        }
-      }
-    }
+
+
+
   }
 }
 
