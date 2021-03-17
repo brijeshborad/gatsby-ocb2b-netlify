@@ -456,7 +456,7 @@ export default class Lg1 extends Component {
                                                 Get In Touch
                                             </h3>
                                         </div>
-                                        <form className="get-form">
+                                        <form className="get-form" data-netlify=true method="POST">
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
                                                 <input className="form-control" type="text" placeholder="John Dev"/>
