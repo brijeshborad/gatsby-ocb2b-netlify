@@ -67,9 +67,9 @@ export default class Lg1 extends Component {
                 }
             ],
             contact_form: {
-                name: '',
+                fullName: '',
                 email: '',
-                phone: '',
+                phoneNumber: '',
                 website: ''
             }
         }
@@ -129,7 +129,17 @@ export default class Lg1 extends Component {
                 "form-name": 'contact-form',
                 ...this.state.contact_form
             })
-        }).then(() => alert('Form submitted successfully.')).catch(error => alert(error))
+        }).then(() => {
+            alert('Form submitted successfully.');
+            this.setState({
+                contact_form: {
+                    fullName: '',
+                    email: '',
+                    phoneNumber: '',
+                    website: ''
+                }
+            })
+        }).catch(error => alert(error))
     }
 
     render() {
@@ -483,13 +493,13 @@ export default class Lg1 extends Component {
                                         <form className="get-form" name="contact-form" data-netlify="true" method="POST" onSubmit={this.handleSubmit}>
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
-                                                <input className="form-control" value={this.state.contact_form.name} onChange={(e) => {
+                                                <input className="form-control" value={this.state.contact_form.fullName} onChange={(e) => {
                                                     let value = e.target.value;
                                                     this.setState(prevState => {
                                                         return {
                                                             contact_form: {
                                                                 ...prevState.contact_form,
-                                                                name: value
+                                                                fullName: value
                                                             }
                                                         }
                                                     })
@@ -512,13 +522,13 @@ export default class Lg1 extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="number">Phone Number</label>
-                                                <input className="form-control" type="text" name="phoneNumber" value={this.state.contact_form.phone} onChange={(e) => {
+                                                <input className="form-control" type="text" name="phoneNumber" value={this.state.contact_form.phoneNumber} onChange={(e) => {
                                                     let value = e.target.value;
                                                     this.setState(prevState => {
                                                         return {
                                                             contact_form: {
                                                                 ...prevState.contact_form,
-                                                                phone: value
+                                                                phoneNumber: value
                                                             }
                                                         }
                                                     })
