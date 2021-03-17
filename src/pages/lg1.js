@@ -551,7 +551,7 @@ export default class Lg1 extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <input type="hidden" name="form-name" value="contact-form" />
-
+                                                <input type="hidden" name="bot-field" />
                                                 <button type="submit" className="btn form-btn">
                                                     See full brand list + catalog
                                                 </button>
