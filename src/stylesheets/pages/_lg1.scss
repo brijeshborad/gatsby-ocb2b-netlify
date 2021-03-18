@@ -2451,7 +2451,12 @@ $font-5: "SF Pro Display Bold";
       }
     }
 
+    .banner-overlay-img{
+      bottom: -55px;
+    }
+
     .brand {
+      padding-top: 150px;
       padding-bottom: 90px;
 
       .title {
@@ -2745,7 +2750,7 @@ $font-5: "SF Pro Display Bold";
     }
 
     .brand {
-      padding-top: 100px;
+      padding-top: 120px;
       padding-bottom: 80px;
 
       .title {
@@ -2793,7 +2798,7 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
-      height: 450px;
+      height: 470px;
 
       .banner-content {
         width: 85%;
@@ -2808,6 +2813,15 @@ $font-5: "SF Pro Display Bold";
 
         &:after {
           right: -20%;
+        }
+      }
+    }
+    .banner-overlay-img{
+      .banner-overlay-bg{
+        .banner-img{
+          &.img-1{
+            margin-bottom: 10px;
+          }
         }
       }
     }
@@ -3156,23 +3170,24 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
-      height: 65vh;
+      height: 420px;
 
       .banner-content {
+        width: 75%;
         h1 {
-          font-size: 45px;
+          font-size: 35px;
 
           span {
-            font-size: 35px;
+            font-size: 25px;
           }
         }
 
-        &:after {
-          display: none;
-        }
       }
     }
 
+    .banner-overlay-img{
+      bottom: -35px;
+    }
 
     .brand {
       padding-top: 80px;
@@ -3399,7 +3414,9 @@ $font-5: "SF Pro Display Bold";
       padding-top: 40px;
       padding-bottom: 40px;
     }
-
+    .logo{
+      width: 55px;
+    }
     .header {
       .logo {
         width: 80%;
@@ -3407,22 +3424,34 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
-      height: 50vh;
+      height: 320px;
+      padding-top: 50px;
 
       .banner-content {
+        width: 85%;
         h1 {
-          font-size: 40px;
+          font-size: 30px;
 
           span {
-            font-size: 30px;
+            font-size: 20px;
           }
         }
       }
     }
 
+    .banner-overlay-img{
+      bottom: -25px;
+      .banner-overlay-bg{
+        .banner-img{
+          &.img-1{
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
 
     .brand {
-      padding-top: 30px;
+      padding-top: 70px;
       padding-bottom: 60px;
 
       .title {
@@ -3718,19 +3747,22 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
+      height: 230px;
+      padding-top: 30px;
       .banner-content {
+        width: 65%;
         h1 {
-          font-size: 35px;
+          font-size: 20px;
 
           span {
-            font-size: 25px;
+            font-size: 15px;
           }
         }
       }
     }
 
     .brand {
-      padding-top: 0px;
+      padding-top: 50px;
       padding-bottom: 40px;
 
       .title {
@@ -3873,13 +3905,18 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
+      height: 180px;
       .banner-content {
+        width: 88%;
         h1 {
-          font-size: 30px;
+          font-size: 20px;
 
           span {
-            font-size: 20px;
+            font-size: 15px;
           }
+        }
+        &:after{
+          display: none;
         }
       }
     }
@@ -4047,15 +4084,7 @@ $font-5: "SF Pro Display Bold";
   .info {
 
     .banner {
-      .banner-content {
-        h1 {
-          font-size: 25px;
 
-          span {
-            font-size: 15px;
-          }
-        }
-      }
     }
 
     .brand {

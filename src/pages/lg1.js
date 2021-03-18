@@ -54,7 +54,7 @@ export default class Lg1 extends Component {
             ],
             tabDataLess: [
                 {
-                    title: 'I’ve had a hard time with online wholesale before because in order buy wholesale products, there are big Minimum Order Quantities—it’s hard to find wholesale suppliers for small business. How do you help with this?',
+                    title: 'I’ve had a hard time with online wholesale before because in order to buy wholesale products, there are big Minimum Order Quantities—it’s hard to find wholesale suppliers for small business. How do you help with this?',
                     content: 'We understand this problem and our platform actually solves this. Many of our suppliers are happy to work with small businesses, and don’t require any MOQ.'
                 },
                 {
@@ -73,24 +73,6 @@ export default class Lg1 extends Component {
                     content: `Our team was thrilled when we found Open Coast. We're now able to curate our online store with leading designers and our customers have responded really positively. Consistent access to this merchandise used to be a real challenge. Also Open Coast has a Shopify integration that’s super easy to use — we were set up in just a few minutes.`,
                     name: 'Ankita, Founder of Boutique Online Store',
                     siteImage: require('../assets/images/testimonials/testimonial-img-1.jpg')
-                },
-                {
-                    image: require('../assets/images/testimonials/testimonial-profile-2.png'),
-                    content: `We\'re always looking for reliable, new channels to sell on. Ebay and Amazon are ok but there\'s so much competition there. Because of Open Coast we now have over 140 Retailers throughout the world selling our products at any given time. We just wait for orders to come in and ship them out. It\'s simple.`,
-                    name: 'Trevor, VP of Wholesale, AppareDealCo',
-                    siteImage: require('../assets/images/testimonials/testimonial-img-2.jpg')
-                },
-                {
-                    image: require('../assets/images/testimonials/testimonial-profile-3.png'),
-                    content: `There is nothing quite like this company. Other services, which have high monthly fees only allow you to sell on the well known marketplaces. But this opens the door to a range of retailers globally. It's online interface is extremely easy to use and has completely changed our business.`,
-                    name: 'June, Head of Sales at PurseParade',
-                    siteImage: require('../assets/images/testimonials/testimonial-img-3.jpg')
-                },
-                {
-                    image: require('../assets/images/testimonials/testimonial-profile-4.png'),
-                    content: `Open Coast has been a powerful tool for our business. We have a Supplier account which has helped us grow sales of our own branded merchandise. We were taken back by how much interest online retailers had in our brand. This experience has been nothing but positive, could not speak more highly about this platform.`,
-                    name: 'Craig, Co-creator of I.L.I.O.T.B',
-                    siteImage: require('../assets/images/testimonials/testimonial-img-4.jpg')
                 },
                 {
                     image: require('../assets/images/testimonials/testimonial-profile-5.png'),
