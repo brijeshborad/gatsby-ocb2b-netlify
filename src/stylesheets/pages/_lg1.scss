@@ -357,6 +357,10 @@ $font-5: "SF Pro Display Bold";
         top: 20%;
       }
     }
+  }
+
+  .banner-overlay-img{
+    position: relative;
 
     .banner-overlay-bg{
       display: flex;
@@ -373,11 +377,6 @@ $font-5: "SF Pro Display Bold";
         }
       }
     }
-  }
-
-  .banner-overlay-img{
-    position: relative;
-
   }
 
   .brand {
