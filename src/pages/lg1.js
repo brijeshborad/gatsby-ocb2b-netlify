@@ -49,7 +49,7 @@ export default class Lg1 extends Component {
                 },
                 {
                     title: 'Checking out wholesale merchandise catalogs via clothing marketplaces can be difficult because wholesale clothing vendors use confusing spreadsheets with poor images. This is a problem with most clothing vendors. Do you make this easier?',
-                    content: 'Yes, everything including product description, stock levels, and prices can be viewed digitallyon our web platform. Each product listing also comes with at least 3 high quality images.'
+                    content: 'Yes, everything including product description, stock levels, and prices can be viewed digitally on our web platform. Each product listing also comes with at least 3 high quality images.'
                 }
             ],
             tabDataLess: [
