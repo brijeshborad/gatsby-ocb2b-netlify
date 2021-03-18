@@ -2,12 +2,34 @@ import React, {Component} from "react";
 import Helmet from "react-helmet"
 import SEO from "../components/Seo"
 import Tabs from "../components/AccordionTabs";
+import {navigate} from 'gatsby'
+
+const errorMessages = {
+    fullName: {
+        required: 'Please enter full name'
+    },
+    email: {
+        required: 'Please enter email',
+        invalid: 'Invalid email'
+    },
+    phoneNumber: {
+        required: 'Please enter phone number'
+    },
+    website: {
+        required: 'Please enter website',
+        invalid: 'Invalid Website'
+    }
+};
+
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+const websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/;
 
 export default class Lg1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
             viewMore: false,
+            menuOpen: false,
             tabDataAll: [
                 {
                     title: 'I’ve had a hard time with online wholesale before because in order buy wholesale products, there are big Minimum Order Quantities—it’s hard to find wholesale suppliers for small business. How do you help with this?',
@@ -45,28 +67,45 @@ export default class Lg1 extends Component {
                 },
             ],
             testimonialIndex: 0,
-            testimonialImageIndex: 0,
-            testimonialsImageList: [
-                require('../assets/images/testimonials/testimonial-img-1.jpg'),
-                require('../assets/images/testimonials/testimonial-img-2.jpg'),
-                require('../assets/images/testimonials/testimonial-img-3.jpg')
-            ],
             testimonialsList: [
                 {
                     image: require('../assets/images/testimonials/testimonial-profile-1.png'),
-                    content: 'Our team was thrilled when we found Open Coast. We’re now able to\n' +
-                        'curate our online store with leading designers and our customers\n' +
-                        'have responded really positively. Consistent access to this\n' +
-                        'merchandise used to be a real challenge',
-                    name: 'Ankita, Founder of Boutique Online Store'
+                    content: `Our team was thrilled when we found Open Coast. We're now able to curate our online store with leading designers and our customers have responded really positively. Consistent access to this merchandise used to be a real challenge. Also Open Coast has a Shopify integration that’s super easy to use — we were set up in just a few minutes.`,
+                    name: 'Ankita, Founder of Boutique Online Store',
+                    siteImage: require('../assets/images/testimonials/testimonial-img-1.jpg')
                 },
                 {
-                    image: require('../assets/images/testimonials/testimonial-profile-1.png'),
-                    content: '-------------',
-                    name: 'OpenCoast'
+                    image: require('../assets/images/testimonials/testimonial-profile-2.png'),
+                    content: `We\'re always looking for reliable, new channels to sell on. Ebay and Amazon are ok but there\'s so much competition there. Because of Open Coast we now have over 140 Retailers throughout the world selling our products at any given time. We just wait for orders to come in and ship them out. It\'s simple.`,
+                    name: 'Trevor, VP of Wholesale, AppareDealCo',
+                    siteImage: require('../assets/images/testimonials/testimonial-img-2.jpg')
+                },
+                {
+                    image: require('../assets/images/testimonials/testimonial-profile-3.png'),
+                    content: `There is nothing quite like this company. Other services, which have high monthly fees only allow you to sell on the well known marketplaces. But this opens the door to a range of retailers globally. It's online interface is extremely easy to use and has completely changed our business.`,
+                    name: 'June, Head of Sales at PurseParade',
+                    siteImage: require('../assets/images/testimonials/testimonial-img-3.jpg')
+                },
+                {
+                    image: require('../assets/images/testimonials/testimonial-profile-4.png'),
+                    content: `Open Coast has been a powerful tool for our business. We have a Supplier account which has helped us grow sales of our own branded merchandise. We were taken back by how much interest online retailers had in our brand. This experience has been nothing but positive, could not speak more highly about this platform.`,
+                    name: 'Craig, Co-creator of I.L.I.O.T.B',
+                    siteImage: require('../assets/images/testimonials/testimonial-img-4.jpg')
+                },
+                {
+                    image: require('../assets/images/testimonials/testimonial-profile-5.png'),
+                    content: `Open Coast has allowed us to find two new Suppliers in our own country and a handful more overseas. Sales have increased over 75% since forming these new relationships and we've doubled the amount of products offered on our eCommerce store. We weren't expecting this — the results have been truly amazing.`,
+                    name: 'Jennifer, Head of Sourcing at Tres Chic',
+                    siteImage: require('../assets/images/testimonials/testimonial-img-5.jpg')
                 }
             ],
             contact_form: {
+                fullName: '',
+                email: '',
+                phoneNumber: '',
+                website: ''
+            },
+            contact_error_form: {
                 fullName: '',
                 email: '',
                 phoneNumber: '',
@@ -81,7 +120,7 @@ export default class Lg1 extends Component {
             if (prevState.testimonialIndex - 1 >= 0) {
                 index = prevState.testimonialIndex - 1;
             } else {
-                index = prevState.testimonialIndex + 1;
+                index = prevState.testimonialsList.length - 1;
             }
             return {
                 testimonialIndex: index
@@ -103,13 +142,6 @@ export default class Lg1 extends Component {
         })
     }
 
-    setIndex(index) {
-        this.setState({
-            testimonialImageIndex: index
-        })
-    }
-
-
     scrollToSection(section) {
         section.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
@@ -120,26 +152,79 @@ export default class Lg1 extends Component {
             .join("&")
     }
 
+    handleChange(event) {
+        let {name, value} = event.target
+        this.setState(prevState => {
+            return {
+                contact_form: {
+                    ...prevState.contact_form,
+                    [name]: value
+                },
+                contact_error_form: {
+                    ...prevState.contact_error_form,
+                    [name]: !value ? errorMessages[name].required : ''
+                }
+            }
+        })
+    }
+
+    validateForm() {
+        let contact_error_form = {
+            fullName: '',
+            email: '',
+            phoneNumber: '',
+            website: ''
+        }
+        let isValid = true;
+        Object.keys(this.state.contact_form).forEach(key => {
+            if (!this.state.contact_form[key]) {
+                isValid = false;
+                contact_error_form[key] = errorMessages[key].required
+            } else {
+                if (key === 'email') {
+                    if (!emailRegex.test(this.state.contact_form[key])) {
+                        isValid = false;
+                        contact_error_form[key] = errorMessages[key].invalid
+                    }
+                }
+                if (key === 'website') {
+                    if (!websiteRegex.test(this.state.contact_form[key])) {
+                        isValid = false;
+                        contact_error_form[key] = errorMessages[key].invalid
+                    }
+                }
+            }
+        })
+        this.setState({contact_error_form: contact_error_form});
+        return isValid;
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: this.encode({
-                "form-name": 'contact-form',
-                ...this.state.contact_form
-            })
-        }).then(() => {
-            alert('Form submitted successfully.');
-            this.setState({
-                contact_form: {
-                    fullName: '',
-                    email: '',
-                    phoneNumber: '',
-                    website: ''
-                }
-            })
-        }).catch(error => alert(error))
+        if (this.validateForm()) {
+            fetch("/", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: this.encode({
+                    "form-name": 'contact-form',
+                    ...this.state.contact_form
+                })
+            }).then(() => {
+                navigate('/thank-you');
+                this.setState({
+                    contact_form: {
+                        fullName: '',
+                        email: '',
+                        phoneNumber: '',
+                        website: ''
+                    }
+                })
+            }).catch(error => alert(error))
+        }
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove('no-scroll')
     }
 
     render() {
@@ -152,7 +237,7 @@ export default class Lg1 extends Component {
                 />
                 <main className="info">
                     {/* header start */}
-                    <header className="header" ref={ref => this.header = ref}>
+                    <header className={`header ${this.state.menuOpen ? 'bg-white' : ''}`}>
                         <div className="container-custom">
                             <div className="row">
                                 <div className="col-12">
@@ -165,6 +250,12 @@ export default class Lg1 extends Component {
                                             </a>
                                             <button className="navbar-toggler" type="button" data-toggle="collapse"
                                                     data-target="#navbarSupportedContent"
+                                                    onClick={() => this.setState(prevState => {
+                                                        document.body.classList.toggle('no-scroll')
+                                                        return {
+                                                            menuOpen: !prevState.menuOpen
+                                                        }
+                                                    })}
                                                     aria-controls="navbarSupportedContent" aria-expanded="false"
                                                     aria-label="Toggle navigation">
                                                 <span className='bar'/>
@@ -178,10 +269,10 @@ export default class Lg1 extends Component {
                                         {/*Menu Start*/}
                                         <div className="collapse navbar-menu navbar-collapse float-right"
                                              id="navbarSupportedContent">
-                                            <ul className="navbar-nav mr-auto">
-                                                <li className="nav-item active home">
-                                                    <a className="nav-link " href="#Home"
-                                                       onClick={() => this.scrollToSection(this.header)}>Home</a>
+                                            <ul className={`navbar-nav mr-auto ${!this.state.menuOpen ? 'd-none' : ''}`}>
+                                                <li className="nav-item home">
+                                                    <a className="nav-link " href="#FAQ"
+                                                       onClick={() => this.scrollToSection(this.faq)}>FAQ</a>
                                                 </li>
                                                 <li className="nav-item about">
                                                     <a className="nav-link " href="#about-us"
@@ -248,7 +339,7 @@ export default class Lg1 extends Component {
                     {/*Banner overlay Images End*/}
 
                     {/*Brand Start*/}
-                    <section className="brand" ref={ref => this.aboutUs = ref}>
+                    <section className="brand">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-12">
@@ -287,7 +378,7 @@ export default class Lg1 extends Component {
                     {/*Brand End*/}
 
                     {/*Right Place Start*/}
-                    <section className="right-place section-pt-md-space">
+                    <section className="right-place section-pt-md-space" ref={ref => this.aboutUs = ref}>
                         <div className="left-img-wrapper">
                             <img className="" src={require('../assets/images/info/right-place/left.png')}
                                  alt="right place img"/>
@@ -297,7 +388,7 @@ export default class Lg1 extends Component {
                                 <div className="col-12">
                                     <div className="title text-center">
                                         <h3>
-                                            Are you an online Retailer that is constantly looking to expand your brand
+                                            Are you an online Retailer looking to expand your brand
                                             offering across all categories?
                                         </h3>
                                         <h2>
@@ -309,14 +400,14 @@ export default class Lg1 extends Component {
                                 <div className="col-lg-6 col-md-6 mx-auto">
                                     <div className="right-place-content-bg d-flex">
                                         <div className="right-place-content">
-                                            <p>Our B2B Sourcing platform is free and esay-to-use--Brousing products,
-                                                brands, pricing form your computer or smarphone. No more struggling with
-                                                complicated CSV files or Spreadsheets. We've made everything modern ands
-                                                effortless.</p>
+                                            <p>Our B2B sourcing platform is free and easy-to-use — browse products,
+                                                brands, pricing from your computer or smartphone. No more struggling
+                                                with complicated CSV files or spreadsheets. We’ve made everything modern
+                                                and effortless.</p>
                                             <p>We work with authorized distributors of leading fashion brands and
-                                                designers. All marchandise is certified authentic with a 110% cash back
+                                                designers. All merchandise is certified authentic with a 110% cash back
                                                 guarantee. All paperwork and sanitized invoices are available upon
-                                                reqest.</p>
+                                                request.</p>
                                         </div>
                                         <div className="right-place-img">
                                             <img className="img-fluid"
@@ -337,7 +428,7 @@ export default class Lg1 extends Component {
                     <section className="get-in-touch section-py-lg" ref={ref => this.contact = ref}>
                         <div className="container-fluid">
                             <div className="row">
-                                <div className="col-lg-6 pr-3">
+                                <div className="col-lg-6 pr-5">
                                     <div className="title">
                                         <h3 className="get-title">
                                             Why Us?
@@ -393,46 +484,46 @@ export default class Lg1 extends Component {
                                     <div className="why-choose-list">
                                         <ul>
                                             <li>
-                                                <span>
-                                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                                         xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                         viewBox="0 0 477.867 477.867"
-                                                         style={{
-                                                             enableBackground: 'new 0 0 477.867 477.867'
-                                                         }} xmlSpace="preserve">
-                                                        <g>
-                                                            <g>
-                                                                <path d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933
-                                                                    C477.726,107.033,370.834,0.141,238.933,0z M370.466,165.666L199.799,336.333c-6.665,6.663-17.468,6.663-24.132,0l-68.267-68.267
-                                                                    c-6.78-6.548-6.968-17.352-0.42-24.132c6.548-6.78,17.352-6.968,24.132-0.42c0.142,0.138,0.282,0.277,0.42,0.42l56.201,56.201
-                                                                    l158.601-158.601c6.78-6.548,17.584-6.36,24.132,0.419C376.854,148.567,376.854,159.052,370.466,165.666z"/>
-                                                            </g>
-                                                        </g>
-                                                    </svg>
-                                               </span>
-                                                Affordable brands ranging from Tommy Hilfiger to nike, all the way to up
-                                                Luxury brands like Alexander McQueen and Balanciaga.
+                                <span>
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                         xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 477.867 477.867"
+                                         style={{
+                                             enableBackground: 'new 0 0 477.867 477.867'
+                                         }} xmlSpace="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933
+                                                    C477.726,107.033,370.834,0.141,238.933,0z M370.466,165.666L199.799,336.333c-6.665,6.663-17.468,6.663-24.132,0l-68.267-68.267
+                                                    c-6.78-6.548-6.968-17.352-0.42-24.132c6.548-6.78,17.352-6.968,24.132-0.42c0.142,0.138,0.282,0.277,0.42,0.42l56.201,56.201
+                                                    l158.601-158.601c6.78-6.548,17.584-6.36,24.132,0.419C376.854,148.567,376.854,159.052,370.466,165.666z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                               </span>
+                                                Affordable brands ranging from Tommy Hilfiger to Nike, all the way to up
+                                                Luxury brands like Alexander McQueen and Balenciaga.
                                             </li>
 
                                             <li>
-                                                <span>
-                                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                                         xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                         viewBox="0 0 477.867 477.867"
-                                                         style={{
-                                                             enableBackground: 'new 0 0 477.867 477.867'
-                                                         }} xmlSpace="preserve">
-                                                        <g>
-                                                            <g>
-                                                                <path d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933
-                                                                    C477.726,107.033,370.834,0.141,238.933,0z M370.466,165.666L199.799,336.333c-6.665,6.663-17.468,6.663-24.132,0l-68.267-68.267
-                                                                    c-6.78-6.548-6.968-17.352-0.42-24.132c6.548-6.78,17.352-6.968,24.132-0.42c0.142,0.138,0.282,0.277,0.42,0.42l56.201,56.201
-                                                                    l158.601-158.601c6.78-6.548,17.584-6.36,24.132,0.419C376.854,148.567,376.854,159.052,370.466,165.666z"/>
-                                                            </g>
-                                                        </g>
-                                                    </svg>
-                                               </span>
-                                                We cover all the major fshion categories including: clothing, Shoes,
+                                <span>
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                         xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 477.867 477.867"
+                                         style={{
+                                             enableBackground: 'new 0 0 477.867 477.867'
+                                         }} xmlSpace="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933
+                                                    C477.726,107.033,370.834,0.141,238.933,0z M370.466,165.666L199.799,336.333c-6.665,6.663-17.468,6.663-24.132,0l-68.267-68.267
+                                                    c-6.78-6.548-6.968-17.352-0.42-24.132c6.548-6.78,17.352-6.968,24.132-0.42c0.142,0.138,0.282,0.277,0.42,0.42l56.201,56.201
+                                                    l158.601-158.601c6.78-6.548,17.584-6.36,24.132,0.419C376.854,148.567,376.854,159.052,370.466,165.666z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                               </span>
+                                                We cover all the major fashion categories including: Clothing, Shoes,
                                                 Bags, Accessories, and Jewelry.
                                             </li>
 
@@ -454,9 +545,9 @@ export default class Lg1 extends Component {
                                         </g>
                                     </svg>
                                </span>
-                                                True Wholesale pricing 40% to 80% off MSRP. Our focus is Current Season
-                                                offering but if you are a discount retailer thare are options to browser
-                                                previose seasons too.
+                                                True wholesale pricing 40% to 80% off MSRP. Our focus is Current season
+                                                offerings but if you are a discount Retailer there are options to browse
+                                                previous seasons too.
                                             </li>
 
                                             <li>
@@ -477,8 +568,8 @@ export default class Lg1 extends Component {
                                         </g>
                                     </svg>
                                </span>
-                                                We have flexible solution for Retailers of all sizes ranging from
-                                                Wholesale bulk Transactions to technology-focused tools like APIs
+                                                We have flexible solutions for Retailers of all sizes ranging from
+                                                wholesale bulk transactions to technology-focused tools like APIs
                                             </li>
                                         </ul>
                                     </div>
@@ -490,68 +581,52 @@ export default class Lg1 extends Component {
                                                 Get In Touch
                                             </h3>
                                         </div>
-                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST">
+                                        <form className="get-form" name="contact-form" data-netlify="true" method="POST"
+                                              onSubmit={this.handleSubmit}>
                                             <div className="form-group">
                                                 <label htmlFor="name">Full Name</label>
-                                                <input className="form-control" value={this.state.contact_form.fullName} onChange={(e) => {
-                                                    let value = e.target.value;
-                                                    this.setState(prevState => {
-                                                        return {
-                                                            contact_form: {
-                                                                ...prevState.contact_form,
-                                                                fullName: value
-                                                            }
-                                                        }
-                                                    })
-                                                }} name="fullName" type="text" placeholder="John Dev"/>
+                                                <input
+                                                    className={`form-control ${this.state.contact_error_form['fullName'] ? 'error' : ''}`}
+                                                    name="fullName" type="text" value={this.state.contact_form.fullName}
+                                                    onChange={(event) => this.handleChange(event)}
+                                                    placeholder="John Dev"/>
+                                                {this.state.contact_error_form['fullName'] &&
+                                                <p>{this.state.contact_error_form['fullName']}</p>}
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="email">Email</label>
-                                                <input className="form-control" type="email" name="email" value={this.state.contact_form.email} onChange={(e) => {
-                                                    let value = e.target.value;
-                                                    this.setState(prevState => {
-                                                        return {
-                                                            contact_form: {
-                                                                ...prevState.contact_form,
-                                                                email: value
-                                                            }
-                                                        }
-                                                    })
-                                                }}
-                                                       placeholder="johndev@gmail.com"/>
+                                                <input
+                                                    className={`form-control ${this.state.contact_error_form['email'] ? 'error' : ''}`}
+                                                    type="text" name="email" value={this.state.contact_form.email}
+                                                    onChange={(event) => this.handleChange(event)}
+                                                    placeholder="johndev@gmail.com"/>
+                                                {this.state.contact_error_form['email'] &&
+                                                <p>{this.state.contact_error_form['email']}</p>}
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="number">Phone Number</label>
-                                                <input className="form-control" type="text" name="phoneNumber" value={this.state.contact_form.phoneNumber} onChange={(e) => {
-                                                    let value = e.target.value;
-                                                    this.setState(prevState => {
-                                                        return {
-                                                            contact_form: {
-                                                                ...prevState.contact_form,
-                                                                phoneNumber: value
-                                                            }
-                                                        }
-                                                    })
-                                                }} placeholder="0123456789"/>
+                                                <input
+                                                    className={`form-control ${this.state.contact_error_form['phoneNumber'] ? 'error' : ''}`}
+                                                    type="number" name="phoneNumber"
+                                                    value={this.state.contact_form.phoneNumber}
+                                                    onChange={(event) => this.handleChange(event)}
+                                                    placeholder="0123456789"/>
+                                                {this.state.contact_error_form['phoneNumber'] &&
+                                                <p>{this.state.contact_error_form['phoneNumber']}</p>}
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="website">Website</label>
-                                                <input className="form-control" type="text" name="website" value={this.state.contact_form.website} onChange={(e) => {
-                                                    let value = e.target.value;
-                                                    this.setState(prevState => {
-                                                        return {
-                                                            contact_form: {
-                                                                ...prevState.contact_form,
-                                                                website: value
-                                                            }
-                                                        }
-                                                    })
-                                                }}
-                                                       placeholder="www.website.com"/>
+                                                <input
+                                                    className={`form-control ${this.state.contact_error_form['website'] ? 'error' : ''}`}
+                                                    type="text" name="website" value={this.state.contact_form.website}
+                                                    onChange={(event) => this.handleChange(event)}
+                                                    placeholder="www.website.com"/>
+                                                {this.state.contact_error_form['website'] &&
+                                                <p>{this.state.contact_error_form['website']}</p>}
                                             </div>
                                             <div className="form-group">
-                                                <input type="hidden" name="form-name" value="contact-form" />
-                                                <input type="hidden" name="bot-field" />
+                                                <input type="hidden" name="form-name" value="contact-form"/>
+
                                                 <button type="submit" className="btn form-btn">
                                                     See full brand list + catalog
                                                 </button>
@@ -647,8 +722,8 @@ export default class Lg1 extends Component {
                                     </div>
                                     <div className="mention-content">
                                         <h3>
-                                            Many Of Our Wholesale Suppliers And Distributors Are Also Able To Provide
-                                            Merchandise On Consignment, <span> With Very flexible Terms</span>
+                                            Many of our wholesale suppliers and distributors are also able to provide
+                                            merchandise on consignment, <span> with very flexible terms</span>
                                         </h3>
                                     </div>
                                 </div>
@@ -668,59 +743,50 @@ export default class Lg1 extends Component {
                                         </h3>
                                     </div>
                                 </div>
-                                <div className="col-lg-6">
-                                    <div className="testimonial-slider testimonial-one-slide">
-                                        <div className="slider-content">
-                                            {this.state.testimonialsList.map((item, index) => {
-                                                return (
-                                                    <div
-                                                        className={`testimonial-content-background ${index === this.state.testimonialIndex ? 'active' : ''}`}
-                                                        key={index}>
-                                                        <div className="slider-img-wrapper">
-                                                            <img className="img-fluid"
-                                                                 src={item.image}
-                                                                 alt="testimonial img"/>
-                                                        </div>
-                                                        <div className="content">
-                                                            <h5>
-                                                                {item.content}
-                                                            </h5>
-                                                            <h2>
-                                                                {item.name}
-                                                            </h2>
+                                {this.state.testimonialsList.map((item, index) => {
+                                    return (
+                                        <React.Fragment key={index}>
+                                            <div className="col-lg-6">
+                                                <div className="testimonial-slider testimonial-one-slide">
+                                                    <div className="slider-content">
+                                                        <div
+                                                            className={`testimonial-content-background ${index === this.state.testimonialIndex ? 'active' : ''}`}
+                                                            key={index}>
+                                                            <div className="slider-img-wrapper">
+                                                                <img className="img-fluid"
+                                                                     src={item.image}
+                                                                     alt="testimonial img"/>
+                                                            </div>
+                                                            <div className="content">
+                                                                <h5>
+                                                                    {item.content}
+                                                                </h5>
+                                                                <h2>
+                                                                    {item.name}
+                                                                </h2>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                )
-                                            })}
-                                        </div>
-                                        <div className="navigator">
-                                            <div className='slide-prev' onClick={() => this.prevTestimonial()}>
-                                                <i className="fas fa-chevron-left"/>
+                                                </div>
                                             </div>
-                                            <div className='slide-next' onClick={() => this.nextTestimonial()}>
-                                                <i className="fas fa-chevron-right"/>
+                                            <div className="col-lg-6">
+                                                <div className="testimonial-wrapper">
+                                                    <div className="testimonial-slide-1">
+                                                        <img key={index}
+                                                             className={`img-fluid ${index === this.state.testimonialIndex ? 'active' : ''}`}
+                                                             src={item.siteImage} alt=""/>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </React.Fragment>
+                                    )
+                                })}
+                                <div className="navigator">
+                                    <div className='slide-prev' onClick={() => this.prevTestimonial()}>
+                                        <i className="fas fa-chevron-left"/>
                                     </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="testimonial-wrapper">
-                                        <div className="testimonial-slide-1">
-                                            {this.state.testimonialsImageList.map((item, index) => {
-                                                return <img key={index}
-                                                            className={`img-fluid ${index === this.state.testimonialImageIndex ? 'active' : ''}`}
-                                                            src={item} alt=""/>
-                                            })}
-                                        </div>
-                                        <div className="navigator-dotes">
-                                            <ul>
-                                                {this.state.testimonialsImageList.map((item, index) => (
-                                                    <li key={index} onClick={() => this.setIndex(index)}
-                                                        className={index === this.state.testimonialImageIndex ? 'active' : ''}/>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                    <div className='slide-next' onClick={() => this.nextTestimonial()}>
+                                        <i className="fas fa-chevron-right"/>
                                     </div>
                                 </div>
                             </div>
@@ -729,7 +795,7 @@ export default class Lg1 extends Component {
                     {/*Testimonial End*/}
 
                     {/*According Start*/}
-                    <section className="according-questions section-py-lg">
+                    <section className="according-questions section-py-lg" ref={ref => this.faq = ref}>
                         <div className="custom-container">
                             <div className="row">
                                 <div className="col-lg-12">
