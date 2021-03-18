@@ -309,34 +309,35 @@ export default class Lg1 extends Component {
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    {/*Banner End*/}
-
-                    {/*Banner overlay Images Start*/}
-                    <section className="banner-overlay-img section-pt-lg">
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="banner-overlay-bg">
-                                    <div className="banner-img img-1">
-                                        <img src={require('../assets/images/info/banner/img1.png')} alt=""/>
-                                    </div>
-                                    <div className="banner-img">
-                                        <img src={require('../assets/images/info/banner/img2.png')} alt=""/>
-                                    </div>
-                                    <div className="banner-img img-1">
-                                        <img src={require('../assets/images/info/banner/img3.png')} alt=""/>
-                                    </div>
-                                    <div className="banner-img">
-                                        <img src={require('../assets/images/info/banner/img4.png')} alt=""/>
-                                    </div>
-                                    <div className="banner-img img-1">
-                                        <img src={require('../assets/images/info/banner/img5.png')} alt=""/>
+                        {/*Banner overlay Images Start*/}
+                        <section className="banner-overlay-img section-pt-lg">
+                            <div className="container-fluid">
+                                <div className="row">
+                                    <div className="banner-overlay-bg">
+                                        <div className="banner-img img-1">
+                                            <img src={require('../assets/images/info/banner/img1.png')} alt=""/>
+                                        </div>
+                                        <div className="banner-img">
+                                            <img src={require('../assets/images/info/banner/img2.png')} alt=""/>
+                                        </div>
+                                        <div className="banner-img img-1">
+                                            <img src={require('../assets/images/info/banner/img3.png')} alt=""/>
+                                        </div>
+                                        <div className="banner-img">
+                                            <img src={require('../assets/images/info/banner/img4.png')} alt=""/>
+                                        </div>
+                                        <div className="banner-img img-1">
+                                            <img src={require('../assets/images/info/banner/img5.png')} alt=""/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
+                        {/*Banner overlay Images End*/}
                     </section>
-                    {/*Banner overlay Images End*/}
+                    {/*Banner End*/}
+
+
 
                     {/*Brand Start*/}
                     <section className="brand">
@@ -380,7 +381,7 @@ export default class Lg1 extends Component {
                     {/*Right Place Start*/}
                     <section className="right-place section-pt-md-space" ref={ref => this.aboutUs = ref}>
                         <div className="left-img-wrapper">
-                            <img className="" src={require('../assets/images/info/right-place/left.png')}
+                            <img className="img-fluid" src={require('../assets/images/info/right-place/left.png')}
                                  alt="right place img"/>
                         </div>
                         <div className="custom-container">
@@ -626,7 +627,7 @@ export default class Lg1 extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <input type="hidden" name="form-name" value="contact-form"/>
-
+                                                <input type="hidden" name="bot-field"/>
                                                 <button type="submit" className="btn form-btn">
                                                     See full brand list + catalog
                                                 </button>
@@ -796,7 +797,7 @@ export default class Lg1 extends Component {
 
                     {/*According Start*/}
                     <section className="according-questions section-py-lg" ref={ref => this.faq = ref}>
-                        <div className="custom-container">
+                        <div className="container">
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="title text-center mb-5">
