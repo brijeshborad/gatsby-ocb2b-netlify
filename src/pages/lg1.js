@@ -632,7 +632,7 @@ export default class Lg1 extends Component {
                                             Our Suppliers
                                         </h2>
                                         <h4>
-                                            Our Suppliers are based in landing fashion markets like
+                                            Our Suppliers are based in leading fashion markets like
                                         </h4>
                                     </div>
                                 </div>
