@@ -2313,6 +2313,16 @@ $font-5: "SF Pro Display Bold";
         margin-right: auto;
       }
     }
+    .get-in-touch{
+      .why-us-icon{
+        .icon-box-bg{
+          height: 140px;
+          .icon-box{
+            height: 140px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -2870,7 +2880,7 @@ $font-5: "SF Pro Display Bold";
 
       .icon-box-bg {
         width: 230px;
-
+        margin-bottom: 15px;
         .icon-box {
           padding: 20px 0 10px 0;
 
@@ -3217,13 +3227,6 @@ $font-5: "SF Pro Display Bold";
     .get-in-touch {
       padding-top: 0;
 
-      .why-us-icon {
-        .icon-box-bg {
-          .icon-box {
-            height: 160px;
-          }
-        }
-      }
 
       .title {
         text-align: center;
@@ -3890,7 +3893,7 @@ $font-5: "SF Pro Display Bold";
       .why-us-icon {
         .icon-box-bg {
           margin-bottom: 10px;
-          height: 130px;
+          height: 140px;
 
           .icon-box {
             .icon {
