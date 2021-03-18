@@ -330,8 +330,7 @@ $font-5: "SF Pro Display Bold";
 
   .banner {
     background-color: #f3f3f3;
-    //height: 100vh;
-
+    height: 100vh;
     .banner-content{
       width: 67%;
       position: relative;
@@ -358,18 +357,14 @@ $font-5: "SF Pro Display Bold";
         top: 20%;
       }
     }
-  }
-
-  .banner-overlay-img{
-    position: relative;
 
     .banner-overlay-bg{
       display: flex;
       align-items: flex-end;
       justify-content: center;
       width: 100%;
-      //position: absolute;
-      //bottom: 0;
+      position: absolute;
+      bottom: 0;
 
       .banner-img{
         padding: 0 20px;
@@ -378,6 +373,11 @@ $font-5: "SF Pro Display Bold";
         }
       }
     }
+  }
+
+  .banner-overlay-img{
+    position: relative;
+
   }
 
   .brand {
