@@ -1905,7 +1905,6 @@ $font-5: "SF Pro Display Bold";
     }
 
     .brand {
-      padding-top: 140px;
       padding-bottom: 110px;
 
       .title {
@@ -2301,6 +2300,12 @@ $font-5: "SF Pro Display Bold";
     .get-in-touch {
       .why-us-icon {
         width: 91%;
+        .icon-box-bg{
+          height: 140px;
+          .icon-box{
+            height: 140px;
+          }
+        }
       }
 
       .why-choose-list {
@@ -2312,15 +2317,8 @@ $font-5: "SF Pro Display Bold";
         margin-left: auto;
         margin-right: auto;
       }
-    }
-    .get-in-touch{
-      .why-us-icon{
-        .icon-box-bg{
-          height: 140px;
-          .icon-box{
-            height: 140px;
-          }
-        }
+      .navigator{
+        bottom: 70px;
       }
     }
   }
@@ -2439,7 +2437,9 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
+      height: 550px;
       .banner-content {
+        width: 75%;
         h1 {
           font-size: 45px;
           line-height: 1.2;
@@ -2452,17 +2452,16 @@ $font-5: "SF Pro Display Bold";
     }
 
     .brand {
-      padding-top: 120px;
       padding-bottom: 90px;
 
       .title {
-        margin-bottom: 40px;
-
+        margin:0 auto 40px auto;
+        width: 65%;
         h2 {
-          font-size: 40px;
+          font-size: 35px;
 
           span {
-            font-size: 55px;
+            font-size: 45px;
           }
         }
       }
@@ -2499,9 +2498,12 @@ $font-5: "SF Pro Display Bold";
       }
 
       .right-place-content-bg {
-        padding-left: 50px;
+        padding-left: 0px;
+        padding-right: 0;
 
         .right-place-content {
+          width: 60%;
+          margin: 0 auto;
           p {
             font-size: 14px;
             padding-top: 20px;
@@ -2510,15 +2512,18 @@ $font-5: "SF Pro Display Bold";
 
         .right-place-img {
           img {
-            width: 180px;
+            width: 220px;
             right: -40%;
 
             + img {
-              width: 170px;
-              bottom: -105px;
+              width: 200px;
+              bottom: -125px;
             }
           }
         }
+      }
+      .left-img-wrapper{
+        width: 34%;
       }
     }
 
@@ -2575,6 +2580,7 @@ $font-5: "SF Pro Display Bold";
 
           &:before {
             width: 20%;
+            left: 5%;
           }
         }
 
@@ -2604,10 +2610,11 @@ $font-5: "SF Pro Display Bold";
 
       .mention-content {
         h3 {
-          font-size: 35px;
+          font-size: 30px;
+          width: 90%;
 
           span {
-            font-size: 45px;
+            font-size: 40px;
           }
         }
       }
@@ -2618,7 +2625,6 @@ $font-5: "SF Pro Display Bold";
         margin-left: auto;
         margin-right: auto;
       }
-
       padding-bottom: 100px;
 
       .title {
@@ -2626,11 +2632,12 @@ $font-5: "SF Pro Display Bold";
 
         h3 {
           font-size: 50px;
-          width: 80%;
+          width: 50%;
         }
       }
 
       .testimonial-slider {
+        width: 100%;
         .testimonial-content-background {
           padding-left: 0;
         }
@@ -2657,11 +2664,20 @@ $font-5: "SF Pro Display Bold";
       }
 
       .testimonial-wrapper {
+        .testimonial-slide-1{
+          img{
+            width: 530px;
+          }
+        }
         &:before {
           height: 115%;
           top: -20px;
           width: 60%;
+          right: -28%;
         }
+      }
+      .navigator{
+        left: unset;
       }
     }
 
@@ -2712,6 +2728,9 @@ $font-5: "SF Pro Display Bold";
           }
         }
       }
+    }
+    .banner{
+      height: 500px ;
     }
 
     .banner-overlay-img {
@@ -2774,10 +2793,10 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
-      height: 65vh;
+      height: 450px;
 
       .banner-content {
-        width: 100%;
+        width: 85%;
 
         h1 {
           font-size: 40px;
@@ -2788,7 +2807,7 @@ $font-5: "SF Pro Display Bold";
         }
 
         &:after {
-          right: -13%;
+          right: -20%;
         }
       }
     }
@@ -2880,7 +2899,7 @@ $font-5: "SF Pro Display Bold";
 
       .icon-box-bg {
         width: 230px;
-        margin-bottom: 15px;
+
         .icon-box {
           padding: 20px 0 10px 0;
 
@@ -3227,6 +3246,13 @@ $font-5: "SF Pro Display Bold";
     .get-in-touch {
       padding-top: 0;
 
+      .why-us-icon {
+        .icon-box-bg {
+          .icon-box {
+            height: 160px;
+          }
+        }
+      }
 
       .title {
         text-align: center;
@@ -3893,7 +3919,7 @@ $font-5: "SF Pro Display Bold";
       .why-us-icon {
         .icon-box-bg {
           margin-bottom: 10px;
-          height: 140px;
+          height: 130px;
 
           .icon-box {
             .icon {
