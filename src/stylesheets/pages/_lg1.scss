@@ -2088,7 +2088,7 @@ $font-5: "SF Pro Display Bold";
 
           .icon-box {
             height: 130px;
-            padding: 15px 0 10px 0;
+            padding: 15px 10px 10px 10px;
 
             .icon {
               img {
@@ -2138,7 +2138,7 @@ $font-5: "SF Pro Display Bold";
           }
 
           .form-control {
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 15px;
             font-size: 15px;
 
@@ -2210,12 +2210,12 @@ $font-5: "SF Pro Display Bold";
         margin: 0 auto;
 
         h3 {
-          font-size: 40px;
+          font-size: 35px;
           width: 80%;
           margin: 0 auto;
 
           span {
-            font-size: 55px;
+            font-size: 45px;
           }
         }
       }
@@ -2237,7 +2237,7 @@ $font-5: "SF Pro Display Bold";
         .accordion-wrapper {
           ul {
             li {
-              padding: 15px;
+              padding: 20px;
 
               p {
                 font-size: 18px;
@@ -2245,7 +2245,7 @@ $font-5: "SF Pro Display Bold";
               }
 
               span {
-                height: 55px;
+                height: 65px;
                 width: 40px;
               }
 
@@ -2288,8 +2288,14 @@ $font-5: "SF Pro Display Bold";
 @media (max-width: 1366px) {
   .info{
     .banner{
+      height: 670px;
       .banner-content{
         width: 69%;
+      }
+    }
+    .right-place{
+      .left-img-wrapper{
+        width: 35%;
       }
     }
     .get-in-touch {
