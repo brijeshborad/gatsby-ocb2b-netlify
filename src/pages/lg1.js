@@ -70,7 +70,7 @@ export default class Lg1 extends Component {
             testimonialsList: [
                 {
                     image: require('../assets/images/testimonials/testimonial-profile-1.png'),
-                    content: `Our team was thrilled when we found Open Coast. We're now able to curate our online store with leading designers and our customers have responded really positively. Consistent access to this merchandise used to be a real challenge. Also Open Coast has a Shopify integration that’s super easy to use — we were set up in just a few minutes.`,
+                    content: `Our team was thrilled when we found Open Coast. We're now able to curate our online store with leading designers and our customers have responded really positively. Consistent access to this merchandise used to be a real challenge.`,
                     name: 'Ankita, Founder of Boutique Online Store',
                     siteImage: require('../assets/images/testimonials/testimonial-img-1.jpg')
                 },
