@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {navigate} from 'gatsby'
+import Helmet from "react-helmet";
 
 const divStyle = {
     position: 'absolute',
@@ -20,9 +21,29 @@ const buttonStyle = {
 }
 
 export default class ThankYou extends Component {
+    injectGA = () => {
+        if (typeof window == 'undefined') {
+            return;
+        }
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+            window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-404473807');
+        gtag('event', 'conversion', {'send_to': 'AW-404473807/DMIjCNLx1fwBEM-P78AB'});
+    };
     render() {
         return (
             <div style={divStyle}>
+                <Helmet>
+                    <title>Open Coast | Thank you</title>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-404473807"/>
+                    <script>{this.injectGA()}</script>
+
+                </Helmet>
                 <h2>Thank You!</h2>
                 <h5 style={{
                     color: '#535353'

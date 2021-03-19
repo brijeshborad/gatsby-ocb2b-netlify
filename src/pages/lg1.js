@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import Helmet from "react-helmet"
 import SEO from "../components/Seo"
 import Tabs from "../components/AccordionTabs";
-import {navigate} from 'gatsby'
+import {navigate} from 'gatsby';
+import Input from 'react-phone-number-input/input';
 
 const errorMessages = {
     fullName: {
@@ -209,10 +210,28 @@ export default class Lg1 extends Component {
         document.body.classList.remove('no-scroll')
     }
 
+    injectGA = () => {
+        if (typeof window == 'undefined') {
+            return;
+        }
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+            window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-404473807');
+    };
     render() {
         return (
             <div>
-                <Helmet title="Open Coast | Sourcing and Fulfillment Platform"/>
+                <Helmet>
+                    <title>Open Coast | Sourcing and Fulfillment Platform</title>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-404473807"/>
+                    <script>{this.injectGA()}</script>
+
+                </Helmet>
                 <SEO
                     title="Sourcing and Fulfillment Platform"
                     description="Whether you're a Supplier or Retailer, getting set up and growing your business has never been easier"
@@ -588,11 +607,11 @@ export default class Lg1 extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="number">Phone Number</label>
-                                                <input
+                                                <Input
                                                     className={`form-control ${this.state.contact_error_form['phoneNumber'] ? 'error' : ''}`}
-                                                    type="number" name="phoneNumber"
+                                                    name="phoneNumber"
                                                     value={this.state.contact_form.phoneNumber}
-                                                    onChange={(event) => this.handleChange(event)}
+                                                    onChange={(event) => this.handleChange({target:{ name: 'phoneNumber', value:event }})}
                                                     placeholder="0123456789"/>
                                                 {this.state.contact_error_form['phoneNumber'] &&
                                                 <p>{this.state.contact_error_form['phoneNumber']}</p>}
