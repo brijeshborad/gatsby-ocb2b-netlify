@@ -311,7 +311,7 @@ $font-5: "SF Pro Display Bold";
 
             .nav-link {
               font-family: $font-4;
-              font-size: 30px;
+              font-size: 25px;
               padding: 10px;
               color: #535353;
             }
@@ -359,12 +359,12 @@ $font-5: "SF Pro Display Bold";
     position: relative;
 
     .banner-content {
-      width: 93%;
+      width: 82%;
       position: relative;
 
       h1 {
         font-family: $font-1;
-        font-size: 80px;
+        font-size: 70px;
         font-weight: unset;
         text-transform: uppercase;
 
@@ -372,7 +372,7 @@ $font-5: "SF Pro Display Bold";
           font-family: $font-2;
           text-transform: lowercase;
           font-style: italic;
-          font-size: 65px;
+          font-size: 60px;
         }
       }
 
@@ -419,7 +419,7 @@ $font-5: "SF Pro Display Bold";
 
       h2 {
         font-family: $font-2;
-        font-size: 70px;
+        font-size: 60px;
         font-style: italic;
         font-weight: unset;
         position: relative;
@@ -427,7 +427,7 @@ $font-5: "SF Pro Display Bold";
 
         span {
           font-family: $font-1;
-          font-size: 80px;
+          font-size: 70px;
           font-style: normal;
           color: #CA9277;
           text-transform: uppercase;
@@ -509,16 +509,18 @@ $font-5: "SF Pro Display Bold";
     padding-bottom: 210px;
 
     .title {
+      width: 80%;
+      margin: 0 auto;
       h3 {
         font-family: $font-1;
-        font-size: 58px;
+        font-size: 55px;
         font-weight: unset;
         color: black;
       }
 
       h2 {
         font-family: $font-3;
-        font-size: 78px;
+        font-size: 70px;
         font-weight: unset;
         font-style: italic;
         text-align: left;
@@ -531,7 +533,7 @@ $font-5: "SF Pro Display Bold";
           width: 48%;
           height: 2px;
           background-color: #CA9277;
-          right: -25%;
+          right: -40%;
           top: calc(50% - 1px);
         }
       }
@@ -610,7 +612,7 @@ $font-5: "SF Pro Display Bold";
 
       .get-title {
         font-family: $font-1;
-        font-size: 80px;
+        font-size: 70px;
         font-weight: unset;
         margin-bottom: 35px;
       }
@@ -633,15 +635,14 @@ $font-5: "SF Pro Display Bold";
       }
     }
 
-
     .why-us-icon {
 
       .icon-box {
         background-color: #c2947b;
         color: white;
         text-align: center;
-        padding: 40px 0 15px 0;
-        height: 220px;
+        padding: 20px 10px 15px 10px;
+        height: 230px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -668,7 +669,7 @@ $font-5: "SF Pro Display Bold";
           align-items: center;
           line-height: 1.2;
           font-family: $font-4;
-          font-size: 30px;
+          font-size: 28px;
           color: #535353;
 
           span {
@@ -711,7 +712,7 @@ $font-5: "SF Pro Display Bold";
           border-radius: 0;
           border: 2px solid #707070;
           box-shadow: none;
-          padding: 37px;
+          padding: 30px;
           width: -webkit-fill-available;
           margin-bottom: 30px;
           font-family: $font-4;
@@ -719,7 +720,7 @@ $font-5: "SF Pro Display Bold";
           &::placeholder {
             color: #D1CDCD;
             font-family: $font-4;
-            font-size: 28px;
+            font-size: 23px;
           }
         }
 
@@ -734,7 +735,7 @@ $font-5: "SF Pro Display Bold";
         }
 
         .form-btn {
-          padding: 35px 30px;
+          padding: 30px;
           width: 90%;
           color: white;
           font-family: $font-4;
@@ -752,21 +753,20 @@ $font-5: "SF Pro Display Bold";
 
   }
 
-
   .suppliers {
     background-color: #eae4dc;
 
     .title {
       width: 80%;
-      margin: 0 auto 130px auto;
+      margin: 0 auto 100px auto;
 
       h2 {
         font-family: $font-1;
-        font-size: 80px;
+        font-size: 70px;
         font-weight: unset;
         line-height: 1;
         position: relative;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
 
         &:before {
           position: absolute;
@@ -794,6 +794,8 @@ $font-5: "SF Pro Display Bold";
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+        width: 280px;
+        height: 280px;
       }
 
       .suppliers-content {
@@ -806,16 +808,15 @@ $font-5: "SF Pro Display Bold";
     }
   }
 
-
   .mention {
     background-color: #f3f3f3;
 
     .title {
-      margin-bottom: 75px;
+      margin-bottom: 60px;
 
       h2 {
         font-family: $font-3;
-        font-size: 78px;
+        font-size: 70px;
         font-weight: normal;
         font-style: italic;
       }
@@ -824,14 +825,14 @@ $font-5: "SF Pro Display Bold";
     .mention-content {
       h3 {
         font-family: $font-1;
-        font-size: 56px;
+        font-size: 54px;
         font-weight: unset;
         letter-spacing: 0;
         line-height: 1.2;
 
         span {
           font-family: $font-3;
-          font-size: 78px;
+          font-size: 65px;
           font-weight: unset;
           color: #CA9277;
           font-style: italic;
@@ -855,7 +856,7 @@ $font-5: "SF Pro Display Bold";
 
       h3 {
         font-family: $font-1;
-        font-size: 80px;
+        font-size: 70px;
         font-weight: unset;
         width: 50%;
         margin: 0 auto;
@@ -976,22 +977,15 @@ $font-5: "SF Pro Display Bold";
     }
   }
 
-
   .according-questions {
     background-color: #f3f3f3;
 
     .title {
       h2 {
         font-family: $font-1;
-        font-size: 80px;
+        font-size: 70px;
         font-weight: unset;
         margin-bottom: 25px;
-      }
-
-      h3 {
-        font-family: $font-1;
-        font-size: 40px;
-        font-weight: unset;
       }
     }
 
@@ -1012,7 +1006,7 @@ $font-5: "SF Pro Display Bold";
 
           li {
             width: -webkit-fill-available;
-            padding: 40px;
+            padding: 35px;
             border: 0.5px solid #707070;
 
             p {
@@ -1021,7 +1015,7 @@ $font-5: "SF Pro Display Bold";
               font-weight: 400;
               font-family: $font-4;
               padding-left: 40px;
-              font-size: 30px;
+              font-size: 25px;
               width: 98%;
               //display: -webkit-box;
               //-webkit-line-clamp: 3;
@@ -1078,7 +1072,6 @@ $font-5: "SF Pro Display Bold";
       justify-content: center;
     }
   }
-
 
   .footer {
     background-color: #0e1526;
@@ -1802,11 +1795,11 @@ $font-5: "SF Pro Display Bold";
     .banner {
 
       .banner-content {
-        width: 70%;
+        width: 78%;
 
         h1 {
 
-          font-size: 75px;
+          font-size: 65px;
         }
       }
     }
@@ -2034,11 +2027,12 @@ $font-5: "SF Pro Display Bold";
           .content {
             h5 {
               font-size: 18px;
-              margin-bottom: 12px;
+              margin-bottom: 10px;
+              width: 90%;
             }
 
             h2 {
-              font-size: 24px;
+              font-size: 25px;
             }
           }
         }
@@ -2192,6 +2186,8 @@ $font-5: "SF Pro Display Bold";
         }
 
         .img-wrapper {
+          width: auto;
+          height: auto;
           img {
             width: 200px;
             height: 200px;
@@ -2215,7 +2211,7 @@ $font-5: "SF Pro Display Bold";
 
         h3 {
           font-size: 35px;
-          width: 80%;
+          width: 70%;
           margin: 0 auto;
 
           span {
@@ -2325,7 +2321,6 @@ $font-5: "SF Pro Display Bold";
     }
   }
 }
-
 
 @media (max-width: 1300px) {
   .info {
@@ -2479,7 +2474,7 @@ $font-5: "SF Pro Display Bold";
           width: 60%;
           margin: 0 auto;
           p {
-            font-size: 14px;
+            font-size: 18px;
             padding-top: 20px;
           }
         }
@@ -2707,8 +2702,9 @@ $font-5: "SF Pro Display Bold";
         }
       }
     }
+
     .banner{
-      height: 500px ;
+      height: 500px;
     }
 
     .banner-overlay-img {
@@ -2735,9 +2731,17 @@ $font-5: "SF Pro Display Bold";
       }
     }
 
+    .testimonial{
+      .testimonial-wrapper{
+        .testimonial-slide-1{
+          img{
+            width: 500px;
+          }
+        }
+      }
+    }
   }
 }
-
 
 @media (max-width: 991px) {
   .info {
@@ -3118,14 +3122,25 @@ $font-5: "SF Pro Display Bold";
           height: fit-content;
 
           span.bar {
-            width: 35px;
+            display: block;
+            margin: 6px 0;
+            width: 28px;
             height: 3px;
             background-color: #535353;
-            display: block;
-
-            + span.bar {
-              margin-top: 7px;
+            transition: all .3s ease-in-out;
+          }
+          &.close{
+            span.bar-1{
+              transform: rotate(45deg);
+              transform-origin: 2px;
             }
+            span.bar-2{
+              opacity: 0;
+            }
+            span.bar-3{
+              transform: rotate(-45deg);
+              transform-origin: 1px;
+             }
           }
         }
       }
@@ -3140,17 +3155,20 @@ $font-5: "SF Pro Display Bold";
             text-align: center;
             z-index: 1;
             display: block;
+            opacity: 1;
+            visibility: visible;
             transition: all 0.5s ease;
+            padding-left: 0;
             .nav-item {
-              padding: 30px 0 !important;
+              padding: 20px 0 !important;
 
               .nav-link {
                 padding: 10px;
-                font-size: 35px;
               }
             }
             &.d-none{
-              display: none;
+              opacity: 0;
+              visibility: hidden;
             }
           }
         }
@@ -3502,12 +3520,14 @@ $font-5: "SF Pro Display Bold";
 
         h3 {
           font-size: 20px;
+          width: 90%;
         }
 
         h2 {
           font-size: 30px;
           margin-top: 10px;
           text-align: center;
+          width: 90%;
 
           &:after {
             right: 50%;
@@ -3769,6 +3789,9 @@ $font-5: "SF Pro Display Bold";
           }
         }
       }
+         .navbar .navbar-menu .navbar-nav .nav-item {
+        padding: 10px 0 !important;
+      }
     }
 
     .banner {
@@ -3818,18 +3841,18 @@ $font-5: "SF Pro Display Bold";
     .right-place {
       .title {
         h3 {
-          font-size: 15px;
-          width: 90%;
+          font-size: 18px;
+          width: 95%;
         }
 
         h2 {
-          width: 90%;
-          font-size: 22px;
+          width: 95%;
+          font-size: 25px;
         }
       }
       .right-place-content-bg{
         .right-place-content{
-          width: 90%;
+          width: 95%;
         }
       }
     }
@@ -3846,6 +3869,7 @@ $font-5: "SF Pro Display Bold";
       }
 
       .why-us-icon {
+        margin: 0 auto;
         .icon-box-bg {
           width: 150px;
           padding: 0 10px;
@@ -3922,6 +3946,15 @@ $font-5: "SF Pro Display Bold";
           right: 0;
         }
       }
+
+      .navigator{
+        .slide-prev,
+        .slide-next{
+          width: 30px;
+          height: 30px;
+          font-size: 20px;
+        }
+      }
     }
 
     .according-questions{
@@ -3946,6 +3979,9 @@ $font-5: "SF Pro Display Bold";
     .header {
       .logo {
         width: 100%;
+      }
+      .navbar .navbar-menu .navbar-nav .nav-item .nav-link {
+        font-size: 15px;
       }
     }
 
@@ -4076,9 +4112,15 @@ $font-5: "SF Pro Display Bold";
       }
       .testimonial-slider{
         .slider-content{
+          .slider-img-wrapper{
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+          }
           .content{
             h5{
               font-size: 15px;
+              width: 100%;
             }
             h2{
               font-size: 20px;
@@ -4129,10 +4171,6 @@ $font-5: "SF Pro Display Bold";
 
 @media (max-width: 320px) {
   .info {
-
-    .banner {
-
-    }
 
     .brand {
       .title {

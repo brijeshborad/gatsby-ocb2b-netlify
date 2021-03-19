@@ -230,7 +230,7 @@ export default class Lg1 extends Component {
                                                 <img className="img-fluid"
                                                      src={require("../assets/images/site-logo.png")} alt=""/>
                                             </a>
-                                            <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                            <button className={`navbar-toggler ${this.state.menuOpen ? 'close' : ''}`} type="button" data-toggle="collapse"
                                                     data-target="#navbarSupportedContent"
                                                     onClick={() => this.setState(prevState => {
                                                         document.body.classList.toggle('no-scroll')
@@ -240,9 +240,9 @@ export default class Lg1 extends Component {
                                                     })}
                                                     aria-controls="navbarSupportedContent" aria-expanded="false"
                                                     aria-label="Toggle navigation">
-                                                <span className='bar'/>
-                                                <span className='bar'/>
-                                                <span className='bar'/>
+                                                <span className='bar bar-1'/>
+                                                <span className='bar bar-2'/>
+                                                <span className='bar bar-3'/>
                                             </button>
                                         </div>
                                         {/*Logo End*/}
