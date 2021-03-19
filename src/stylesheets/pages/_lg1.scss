@@ -2952,7 +2952,7 @@ $font-5: "SF Pro Display Bold";
           font-size: 50px;
           margin-bottom: 30px;
           &:before{
-            left: -5%;
+            left: -10%;
           }
         }
 
@@ -3082,7 +3082,7 @@ $font-5: "SF Pro Display Bold";
       }
 
       .footer-content {
-        margin-bottom: 15px;
+        margin-bottom: 35px;
 
         .footer-content-bg {
           width: 150px;
@@ -3409,6 +3409,13 @@ $font-5: "SF Pro Display Bold";
         width: 350px;
       }
     }
+
+    .footer{
+      text-align: center;
+      .footer-logo, .footer-content-bg{
+        margin: 0 auto;
+      }
+    }
   }
 }
 
@@ -3416,6 +3423,12 @@ $font-5: "SF Pro Display Bold";
 
   .info .right-place .title h2 {
     font-size: 37px;
+  }
+}
+
+@media (max-width: 600px) {
+  .info .testimonial .title h3 {
+    width: 60%;
   }
 }
 
@@ -3515,7 +3528,6 @@ $font-5: "SF Pro Display Bold";
       padding-bottom: 50px;
 
       .title {
-        width: 100%;
         padding: 0 15px;
 
         h3 {
@@ -3608,7 +3620,6 @@ $font-5: "SF Pro Display Bold";
         margin-bottom: 30px;
 
         h2 {
-          font-size: 30px;
           margin-bottom: 20px;
         }
 
@@ -3632,7 +3643,7 @@ $font-5: "SF Pro Display Bold";
       .title {
 
         h2 {
-          font-size: 35px;
+          font-size: 40px;
         }
       }
 
@@ -3652,9 +3663,8 @@ $font-5: "SF Pro Display Bold";
 
       .title {
         margin-bottom: 30px;
-
-        h3 {
-          font-size: 30px;
+        h3{
+          width: 69%;
         }
       }
 
@@ -3694,16 +3704,15 @@ $font-5: "SF Pro Display Bold";
     .according-questions {
       .title {
         h2 {
-          font-size: 30px;
-          margin-bottom: 0px;
-        }
 
-        h3 {
-          font-size: 20px;
+          margin-bottom: 0px;
         }
       }
 
       .accordion {
+        .tab-holder{
+          margin-top: 25px;
+        }
         .accordion-wrapper {
           ul {
             li {
@@ -3731,12 +3740,6 @@ $font-5: "SF Pro Display Bold";
       .container-fluid {
         margin-left: auto;
         margin-right: auto;
-      }
-
-      .col-lg-3 {
-        width: 90%;
-        text-align: center;
-        margin-bottom: 15px;
       }
 
       .footer-logo {
@@ -3768,6 +3771,8 @@ $font-5: "SF Pro Display Bold";
   }
 }
 
+
+
 @media (max-width: 480px) {
   .info {
 
@@ -3795,17 +3800,13 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
-      height: 230px;
+      height: 270px;
       padding-top: 30px;
       .banner-content {
-        width: 65%;
-        h1 {
-          font-size: 20px;
-
-          span {
-            font-size: 15px;
-          }
-        }
+        width: 90%;
+      }
+      &:after{
+        right: -15%;
       }
     }
 
@@ -3816,10 +3817,14 @@ $font-5: "SF Pro Display Bold";
       .title {
         width: 90%;
         h2 {
-          margin-bottom: 20px;
+          margin-bottom: 22px;
+          span{
+            font-size: 30px;
+          }
 
           &:before {
             bottom: 10px;
+            left: -10%;
           }
         }
       }
@@ -3841,18 +3846,16 @@ $font-5: "SF Pro Display Bold";
     .right-place {
       .title {
         h3 {
-          font-size: 18px;
-          width: 95%;
+          width: 100%;
         }
 
         h2 {
-          width: 95%;
-          font-size: 25px;
+          width: 100%;
         }
       }
       .right-place-content-bg{
         .right-place-content{
-          width: 95%;
+          width: 100%;
         }
       }
     }
@@ -3911,11 +3914,10 @@ $font-5: "SF Pro Display Bold";
       padding: 30px 0px 50px 0;
 
       .title {
-        margin-bottom: 30px;
-
-        h3 {
-          font-size: 25px;
+        h3{
+          width: 80%;
         }
+
       }
 
       .testimonial-slider {
@@ -3986,14 +3988,14 @@ $font-5: "SF Pro Display Bold";
     }
 
     .banner {
-      height: 180px;
+      height: 230px;
       .banner-content {
         width: 88%;
         h1 {
-          font-size: 20px;
+          font-size: 25px;
 
           span {
-            font-size: 15px;
+            font-size: 20px;
           }
         }
         &:after{
@@ -4032,8 +4034,12 @@ $font-5: "SF Pro Display Bold";
 
     .get-in-touch {
       .title {
+        margin-top: 0;
         .get-title {
           font-size: 30px;
+        }
+        &.touch{
+          margin-top: 30px;
         }
       }
 
@@ -4052,6 +4058,7 @@ $font-5: "SF Pro Display Bold";
 
       .why-choose-list {
         padding: 0;
+        margin: 15px auto 0 auto;
 
         ul {
           li {
@@ -4074,7 +4081,7 @@ $font-5: "SF Pro Display Bold";
         margin-bottom: 20px;
 
         h2 {
-          font-size: 20px;
+          font-size: 30px;
           margin-bottom: 15px;
         }
 
@@ -4096,7 +4103,14 @@ $font-5: "SF Pro Display Bold";
       .title {
 
         h2 {
-          font-size: 25px;
+          font-size: 30px;
+        }
+      }
+      .mention-content{
+        h3{
+          span{
+            font-size: 20px;
+          }
         }
       }
 
@@ -4107,7 +4121,7 @@ $font-5: "SF Pro Display Bold";
         margin-bottom: 20px;
 
         h3 {
-          font-size: 20px;
+          font-size: 30px;
         }
       }
       .testimonial-slider{
@@ -4141,7 +4155,7 @@ $font-5: "SF Pro Display Bold";
     .according-questions {
       .title {
         h2 {
-          font-size: 25px;
+          font-size: 30px;
         }
       }
 
@@ -4149,9 +4163,13 @@ $font-5: "SF Pro Display Bold";
         .accordion-wrapper {
           ul {
             li {
+              padding: 20px;
               span {
                 width: 40px;
                 height: 74px;
+              }
+              p{
+               font-size: 17px;
               }
             }
           }
@@ -4164,6 +4182,19 @@ $font-5: "SF Pro Display Bold";
         width: 250px;
         padding: 15px 20px;
       }
+    }
+
+    .footer {
+        .col-lg-3{
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      .footer-title{
+        h3{
+          margin-bottom: 10px;
+        }
+      }
+
     }
 
   }
